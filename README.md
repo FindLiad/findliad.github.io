@@ -5,6 +5,15 @@
 - <b>SQL</b>
   - [Data-Backed Decision Making for Youtube Campaigns](https://github.com/FindLiad/Data-Backed-Decision-Making-for-Youtube-Campaigns.git)
 
+<h2> 🏆 Certifications & Badges:</h2>
+
+- <b>Certified Pega Business Architect</b>
+- <b>CSPO (Certified Scrum Product Owner)</b>
+  - [Scrum Alliance](https://bcert.me/szegpmadt)
+- <b>Snowflake Badges</b>
+  - [Hands-On Essentials: Data Warehousing Workshop](https://achieve.snowflake.com/de6a8975-e11f-4785-90e3-9666c3ef468e#acc.wgJcxdA3)
+  - [Hands-On Essentials: Collaboration, Marketplace & Cost Estimation Workshop](https://achieve.snowflake.com/93121afa-094f-4223-b278-508051e48a46#acc.xgnZDtAz)
+
 <h2> 🤳 Connect with me:</h2>
 
 [<img align="left" alt="LiadMizrachi | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
