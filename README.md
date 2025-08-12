@@ -1,29 +1,27 @@
-# findliad.github.io
+<h1>Hi, I'm Liad! <br/><a href="https://github.com/findliad">Independent Creator</a>, <a href="https://www.linkedin.com/in/joshmadakor/">Product Leader</a>
 
-# Top UK YouTubers 2024 Dashboard
+<h2>👨‍💻 Software Development Projects:</h2>
 
-This project replicates the dashboard tutorial from [SDW Online](https://sdw-online.github.io/top_uk_youtubers_2024/), including data prep, SQL setup, and visualization in Tableau.
+- <b>SQL</b>
+  - [Data-Backed Decision Making for Youtube Campaigns](https://github.com/joshmadakor1/Algorithms-Practice)
 
-The primary difference is SDW used Microsoft Platforms like SQL Server and PowerBI - whereas I used Azure Data Studio on Mac and Tableu
+<h2> 🤳 Connect with me:</h2>
 
-## 🧠 Project Flow
-1. Kaggle CSV → cleaned via Python script (`prep_youtube_uk.py`)
-2. Data loaded into Dockerized SQL Server
-3. Tableau Dashboard created with 6 custom measures:
-   - Total Views (B)
-   - Total Subscribers (M)
-   - Views per Subscriber
-   - Avg Views per Video (M)
-   - Engagement Rate
-   - Total Videos
+[<img align="left" alt="LiadMizrachi | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
 
-## 🗂️ Contents
-- `Product_Requirements_Documentation`: Problem Statement, Stakeholders, User Stories and Acceptance Criteria
-- `prep_youtube_uk.py`: Cleans and enriches the Kaggle data with YouTube API
-- `final_youtube_data.csv`: Final dataset used for visualization
-- `Youtube_Visualization.twb`: Tableau packaged workbook
-- `Images/`: Preview images of the dashboard
-- `README.md`: This file
+[linkedin]: https://linkedin.com/in/Liadmizrachi
 
-## 📊 Preview
-![dashboard](Images/dashboard_complete.png)
+<!--
+**joshmadakor1/joshmadakor1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+Here are some ideas to get you started:
+
+- 🔭 I’m currently working on ...
+- 🌱 I’m currently learning ...
+- 👯 I’m looking to collaborate on ...
+- 🤔 I’m looking for help with ...
+- 💬 Ask me about ...
+- 📫 How to reach me: ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+-->
