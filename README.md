@@ -3,7 +3,7 @@
 <h2>👨‍💻 Software Development Projects:</h2>
 
 - <b>SQL</b>
-  - [Data-Backed Decision Making for Youtube Campaigns](https://github.com/joshmadakor1/Algorithms-Practice)
+  - [Data-Backed Decision Making for Youtube Campaigns](https://github.com/FindLiad/Data-Backed-Decision-Making-for-Youtube-Campaigns.git)
 
 <h2> 🤳 Connect with me:</h2>
 
