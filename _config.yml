@@ -1,21 +1,5 @@
-title: "My Portfolio"
+title: "Liad's Lil Portfolio"
 description: "Data & product projects: SQL, Snowflake, Databricks, Tableau, and more."
 author: "Liad Mizrachi"
-<<<<<<< HEAD
 theme: jekyll-theme-minimal
 show_downloads: false
-=======
-show_downloads: true
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-- jekyll-remote-theme 
->>>>>>> c4f120f9482a4724ccd8ac8d52364dcb81a167c9
-
-# Optional: simple nav links
-nav:
-  - name: Home
-    url: /
-  - name: Projects
-    url: /projects/
-  - name: About
-    url: /about/
