@@ -18,6 +18,7 @@ The primary difference is SDW used Microsoft Platforms like SQL Server and Power
    - Total Videos
 
 ## 🗂️ Contents
+- `Product_Requirements_Documentation`: Problem Statement, Stakeholders, User Stories and Acceptance Criteria
 - `prep_youtube_uk.py`: Cleans and enriches the Kaggle data with YouTube API
 - `final_youtube_data.csv`: Final dataset used for visualization
 - `Youtube_Visualization.twb`: Tableau packaged workbook
