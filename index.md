@@ -1,10 +1,13 @@
 ---
 layout: page
-title: Projects
+title: Welcome
 ---
 
-Welcome! Explore selected work:
+# Welcome to My Portfolio
 
-- **Dashboards** → [/projects/#dashboards](/projects/#dashboards)
-- **Data Engineering** → [/projects/#data-engineering](/projects/#data-engineering)
-- **SQL** → [/projects/#sql](/projects/#sql)
+Explore my work across data, analytics, and product management.
+
+## Featured Projects
+- **Dashboards** → [View Projects](/projects/#dashboards)
+- **Data Engineering** → [View Projects](/projects/#data-engineering)
+- **SQL** → [View Projects](/projects/#sql)
