@@ -1,7 +1,6 @@
 title: "My Personal Project Portfolio"
 description: "My take on quick, yet meaningful wins"   # no subtext in the blue header
 permalink: ':title/'
-baseurl: "/portfolio"
 url: "https://findliad.github.io"
 theme: jekyll-theme-modernist
 
@@ -12,3 +11,4 @@ social-email: "FindLiad@gmail.com"
 
 discus-identifier:
 analytics:
+
