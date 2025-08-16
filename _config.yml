@@ -1,0 +1,14 @@
+title: "My Personal Project Portfolio"
+description: "My take on quick, yet meaningful wins"   # or whatever you have
+permalink: ':title/'
+baseurl: ""                      # <-- empty at the root!
+url: "https://findliad.github.io"
+theme: jekyll-theme-modernist
+
+author: "Liad Mizrachi"
+social-github: "FindLiad"
+social-linkedin: "https://www.linkedin.com/in/liad-mizrachi/"
+social-email: "FindLiad@gmail.com"
+
+discus-identifier:
+analytics:
