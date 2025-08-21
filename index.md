@@ -50,7 +50,7 @@ title: "Home"
 
       <p>I turn ambiguity into clear product bets. With an M.S. from Penn and a CSPO, I frame problems crisply, align stakeholders on the minimum valuable product, and keep roadmaps tied to measurable outcomes. My bias is toward measurable progress, transparent trade-offs, and practical impact over gaudy design.</p>
 
-      <p>My path started in engineering—building models and CI/CD pipelines at NASA, then improving QA and lifecycle workflows at Lockheed Martin. I moved into product at Pegasystems, leading AI-powered initiatives on Customer Decision Hub for enterprise clients like Verizon and T-Mobile, focusing on scalable, high-impact outcomes that endure.</p>
+      <p>My path began in engineering—building models and CI/CD pipelines at NASA, then improving QA and lifecycle workflows at Lockheed Martin. I moved into product at Pegasystems, leading AI-powered initiatives on Customer Decision Hub for enterprise clients like Verizon and T-Mobile, focusing on scalable, high-impact outcomes that endure.</p>
 
       <p>Today, I focus on AI-enabled, data-informed experiences for operators and customers in complex environments: instrumentation from day one, dashboards that guide recurring decisions, and agile practices that turn uncertainty into progress.</p>
     </div>
