@@ -1,4 +1,3 @@
-<!-- index.md -->
 ---
 layout: default
 title: "Home"
@@ -71,3 +70,6 @@ title: "Home"
     </li>
   </ul>
 </section>
+
+
+ 

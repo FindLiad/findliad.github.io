@@ -1,14 +1,6 @@
+# _config.yml
 title: "My Personal Project Portfolio"
-description: "My take on quick, yet meaningful wins"   # no subtext in the blue header
-permalink: ':title/'
+description: "My take on quick, yet meaningful wins"
 url: "https://findliad.github.io"
-theme: jekyll-theme-modernist
-
+baseurl: ""   # user site -> keep empty
 author: "Liad Mizrachi"
-social-github: "FindLiad"
-social-linkedin: "https://www.linkedin.com/in/liad-mizrachi/"
-social-email: "FindLiad@gmail.com"
-
-discus-identifier:
-analytics:
-

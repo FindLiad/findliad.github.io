@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="inner">
+        <h1 class="project-name">{{ site.title }}</h1>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <div class="inner">
+        {{ content }}
+      </div>
+    </main>
+
+    {% comment %} optional footer include later {% endcomment %}
+  </body>
+</html>
