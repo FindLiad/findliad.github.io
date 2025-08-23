@@ -1,5 +1,4 @@
-```markdown
---- 
+---
 layout: default
 title: Home
 ---
@@ -15,13 +14,13 @@ title: Home
   <h2>Trophy Case 🥇</h2>
   <div class="trophy-row">
     <a class="trophy-badge" href="https://achieve.snowflake.com/de6a8975-e11f-4785-90e3-9666c3ef468e#acc.ZX9lSow3" target="_blank" rel="noopener" aria-label="Snowflake Credential 1">
-      <img class="trophy-img" src="{{ site.baseurl }}/images/badges/snowflake1.png" alt="Snowflake Credential 1">
+      <img class="trophy-img" src="{{ '/images/badges/snowflake1.png' | relative_url }}" alt="Snowflake Credential 1">
     </a>
     <a class="trophy-badge" href="https://achieve.snowflake.com/93121afa-094f-4223-b278-508051e48a46#acc.mduLZGOw" target="_blank" rel="noopener" aria-label="Snowflake Credential 2">
-      <img class="trophy-img" src="{{ site.baseurl }}/images/badges/snowflake2.png" alt="Snowflake Credential 2">
+      <img class="trophy-img" src="{{ '/images/badges/snowflake2.png' | relative_url }}" alt="Snowflake Credential 2">
     </a>
     <a class="trophy-badge" href="https://certification.scrumalliance.org/accounts/1772540-liad-mizrachi/certifications/2103507-cspo" target="_blank" rel="noopener" aria-label="CSPO Certification">
-      <img class="trophy-img" src="{{ site.baseurl }}/images/badges/cspo.png" alt="CSPO Certification">
+      <img class="trophy-img" src="{{ '/images/badges/cspo.png' | relative_url }}" alt="CSPO Certification">
     </a>
   </div>
 </section>
@@ -31,7 +30,7 @@ title: Home
   <!-- LEFT PANEL -->
   <div class="col-left">
     <div class="top-group">
-      <img src="{{ site.baseurl }}/images/liad-mizrachi.jpg" alt="Liad Mizrachi" class="profile-pic">
+      <img src="{{ '/images/liad-mizrachi.jpg' | relative_url }}" alt="Liad Mizrachi" class="profile-pic">
       <h3 class="profile-name">Liad Mizrachi</h3>
       <p class="profile-title">Senior Product Manager</p>
     </div>
@@ -67,8 +66,10 @@ title: Home
       <em>Problem:</em> Decisions leaned on engagement metrics.<br>
       <em>Approach:</em> Explainable KPIs + consolidated analysis model.<br>
       <em>Outcome:</em> Interactive dashboard for marketers to make data-backed decisions.<br>
-      <span class="project-links">🔗 <a href="https://findliad.github.io/Data-Backed-Decision-Making-for-Youtube-Campaigns/" target="_blank" rel="noopener">View Project</a> · <a href="https://github.com/FindLiad/Data-Backed-Decision-Making-for-Youtube-Campaigns" target="_blank" rel="noopener">View Code</a></span>
+      <span class="project-links">🔗
+        <a href="https://findliad.github.io/Data-Backed-Decision-Making-for-Youtube-Campaigns/" target="_blank" rel="noopener">View Project</a> ·
+        <a href="https://github.com/FindLiad/Data-Backed-Decision-Making-for-Youtube-Campaigns" target="_blank" rel="noopener">View Code</a>
+      </span>
     </li>
   </ul>
 </section>
-```
