@@ -1,7 +1,7 @@
-<!-- index.md -->
----
+```markdown
+--- 
 layout: default
-title: "Home"
+title: Home
 ---
 
 <!-- WHY -->
@@ -71,3 +71,4 @@ title: "Home"
     </li>
   </ul>
 </section>
+```
