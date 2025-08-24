@@ -8,16 +8,13 @@ title: "Home"
   <img class="hero-img" src="{{ site.baseurl }}/images/Redpillbluepill.png" alt="Liad considering data choices (red pill vs blue pill)">
   <div class="hero-overlay">
     <h1 class="hero-title">My Personal Project Portfolio</h1>
-    <div class="hero-card">
-      <h2>What's The Business Value? 💰</h2>
-      <p>This isn’t a static résumé — it’s a record of product challenges I've explored, solved and delivered impact on end to end. Each project shows my problem framing, KPI establishment, tradeoffs, and the data I used to complete the mission.</p>
-    </div>
+    <p class="hero-subtext">What's The Business Value? 💰 — This isn’t a static résumé, it’s a record of product challenges I've explored, solved and delivered impact on end to end.</p>
   </div>
 </section>
 
-<!-- TROPHY CASE -->
-<section class="panel" aria-labelledby="trophy-title">
-  <h2 id="trophy-title">Trophy Case 🥇</h2>
+<!-- INTRO PANEL: TROPHY + ABOUT -->
+<section class="panel" aria-label="Intro and Credentials">
+  <h2 class="centered-heading">Trophy Case 🥇</h2>
   <div class="trophy-row" role="list">
     <a class="trophy-badge" href="https://achieve.snowflake.com/de6a8975-e11f-4785-90e3-9666c3ef468e#acc.ZX9lSow3" target="_blank" rel="noopener" aria-label="Snowflake Credential 1" role="listitem">
       <img class="trophy-img" src="{{ site.baseurl }}/images/badges/snowflake1.png" alt="Snowflake Credential 1">
@@ -29,42 +26,42 @@ title: "Home"
       <img class="trophy-img" src="{{ site.baseurl }}/images/badges/cspo.png" alt="CSPO Certification">
     </a>
   </div>
+
+  <!-- INTRO: PROFILE (LEFT) + ABOUT (RIGHT) -->
+  <div class="two-col" role="region" aria-label="Intro">
+    <!-- LEFT PANEL -->
+    <div class="col-left">
+      <div class="top-group">
+        <img src="{{ site.baseurl }}/images/liad-mizrachi.jpg" alt="Portrait of Liad Mizrachi" class="profile-pic" loading="eager" decoding="async">
+        <h3 class="profile-name">Liad Mizrachi</h3>
+        <p class="profile-title">Senior Product Manager</p>
+      </div>
+
+      <p class="contact-label"><em>Get in touch! 📧</em></p>
+      <nav class="contact-bar" aria-label="Contact">
+        <a class="contact-btn" href="https://www.linkedin.com/in/liad-mizrachi/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a class="contact-btn" href="https://github.com/FindLiad" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a class="contact-btn" href="mailto:FindLiad@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+      </nav>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="col-right">
+      <div class="about-inner">
+        <h2>About Me 👤</h2>
+        <p>I turn ambiguity into clear product bets. With an M.S. from Penn and a CSPO, I frame problems crisply, align stakeholders on the minimum valuable product, and keep roadmaps tied to measurable outcomes. My bias is toward measurable progress, transparent trade-offs, and practical impact over gaudy design.</p>
+        <p>My path began in engineering—building models and CI/CD pipelines at NASA, then improving QA and lifecycle workflows at Lockheed Martin. I moved into product at Pegasystems, leading AI-powered initiatives on Customer Decision Hub for enterprise clients like Verizon and T-Mobile, focusing on scalable, high-impact outcomes that endure.</p>
+        <p>Today, I focus on AI-enabled, data-informed experiences for operators and customers in complex environments: instrumentation from day one, dashboards that guide recurring decisions, and agile practices that turn uncertainty into progress.</p>
+      </div>
+    </div>
+  </div>
 </section>
-
-<!-- INTRO: PROFILE (LEFT) + ABOUT (RIGHT) -->
-<div class="two-col" role="region" aria-label="Intro">
-  <!-- LEFT PANEL -->
-  <div class="col-left">
-    <div class="top-group">
-      <img src="{{ site.baseurl }}/images/liad-mizrachi.jpg" alt="Portrait of Liad Mizrachi" class="profile-pic" loading="eager" decoding="async">
-      <h3 class="profile-name">Liad Mizrachi</h3>
-      <p class="profile-title">Senior Product Manager</p>
-    </div>
-
-    <p class="contact-label"><em>Get in touch! 📧</em></p>
-    <nav class="contact-bar" aria-label="Contact">
-      <a class="contact-btn" href="https://www.linkedin.com/in/liad-mizrachi/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <i class="fab fa-linkedin" aria-hidden="true"></i>
-      </a>
-      <a class="contact-btn" href="https://github.com/FindLiad" target="_blank" rel="noopener" aria-label="GitHub">
-        <i class="fab fa-github" aria-hidden="true"></i>
-      </a>
-      <a class="contact-btn" href="mailto:FindLiad@gmail.com" aria-label="Email">
-        <i class="fas fa-envelope" aria-hidden="true"></i>
-      </a>
-    </nav>
-  </div>
-
-  <!-- RIGHT PANEL -->
-  <div class="col-right">
-    <div class="about-inner">
-      <h2>About Me 👤</h2>
-      <p>I turn ambiguity into clear product bets. With an M.S. from Penn and a CSPO, I frame problems crisply, align stakeholders on the minimum valuable product, and keep roadmaps tied to measurable outcomes. My bias is toward measurable progress, transparent trade-offs, and practical impact over gaudy design.</p>
-      <p>My path began in engineering—building models and CI/CD pipelines at NASA, then improving QA and lifecycle workflows at Lockheed Martin. I moved into product at Pegasystems, leading AI-powered initiatives on Customer Decision Hub for enterprise clients like Verizon and T-Mobile, focusing on scalable, high-impact outcomes that endure.</p>
-      <p>Today, I focus on AI-enabled, data-informed experiences for operators and customers in complex environments: instrumentation from day one, dashboards that guide recurring decisions, and agile practices that turn uncertainty into progress.</p>
-    </div>
-  </div>
-</div>
 
 <!-- FEATURED PROJECTS -->
 <section class="panel" aria-labelledby="featured-title">
@@ -82,5 +79,3 @@ title: "Home"
     </li>
   </ul>
 </section>
-
- 
