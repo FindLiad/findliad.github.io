@@ -115,38 +115,48 @@ body::after{
 .project-links a{ text-decoration:none; color:var(--brand-1); font-weight:600; }
 .project-links a:hover{ text-decoration:underline; color:var(--brand-2); }
 
-/* ========= “COMPRESSED DESKTOP” FEEL ON MOBILE ========= */
-/* Keep two columns and the divider on phones; scale elements like your compressed desktop screenshots */
+/* ========= STACKED LAYOUT FOR COMPRESSED DESKTOP & MOBILE ========= */
+/* Order wanted:
+   1) Hero (already top)
+   2) Profile block (left column content)
+   3) About Me
+   4) Trophy Case
+   5) Projects
+*/
 @media (max-width:900px){
-  /* Slightly taller hero for phones */
-  .hero-img{ height:clamp(320px,62vw,520px); object-position:center top; }
+  /* hero just a touch taller on small screens */
+  .hero-img{ height:clamp(320px,64vw,520px); object-position:center top; }
   .hero-title{ font-size:clamp(1.6rem,7vw,2.2rem); }
   .hero-subtext{ font-size:clamp(1rem,4vw,1.15rem); max-width:92%; }
 
-  /* Two columns (no stacking) + visible divider; ratios match your compressed view */
-  .intro-grid{ grid-template-columns:44% 56%; }
-  .intro-left, .intro-right{ padding:14px 12px; }
+  /* STACK the center section (no side-by-side) */
+  .intro-grid{ grid-template-columns:1fr; }
+  .intro-grid::before{ display:none; }          /* hide vertical divider */
 
-  /* Scale like compressed desktop */
-  .profile-pic{ width:210px; height:210px; margin-bottom:8px; }
-  .profile-title{ margin:4px 0 4px; }
-  .contact-bar{ gap:10px; }
-  .contact-btn{ height:64px; border-radius:12px; }
-  .contact-btn i{ font-size:26px; }
+  /* Profile block first */
+  .intro-left{ order:1; padding:14px 12px 0; }
+  .profile-pic{ width:min(280px,70vw); height:auto; aspect-ratio:1/1; }
+  .profile-title{ margin:4px 0 10px; }
+  .contact-bar{ gap:12px; }
+  .contact-btn{ height:70px; }
+  .contact-btn i{ font-size:28px; }
+  .contact-block{ margin-top:12px; margin-bottom:8px; }
 
-  .about-inner p{ font-size:1.05rem; line-height:1.65; }
-  .trophy-badge{ width:70px; height:70px; }
+  /* About Me second */
+  .intro-right{ order:2; padding:6px 12px 0; }
+  .about-inner p{ font-size:1.06rem; line-height:1.68; }
+  .about-sep{ margin:14px 0 12px; }
 
-  /* Keep bottoms flush even on shorter screens */
-  .intro-right{ justify-content:space-between; }
-  .trophy-row{ margin-bottom:0; }
+  /* Trophy third (already under About Me inside .intro-right) */
+  .trophy-badge{ width:74px; height:74px; }
+
+  /* Keep nice breathing room below the whole panel */
+  .intro-panel{ padding-bottom:10px; }
 }
 
-/* Ultra small phones (narrower than your compressed desktop) */
+/* Extra narrow phones */
 @media (max-width:420px){
-  .intro-grid{ grid-template-columns:48% 52%; }
-  .profile-pic{ width:185px; height:185px; }
-  .contact-btn{ height:58px; }
+  .contact-btn{ height:62px; }
   .contact-btn i{ font-size:24px; }
-  .trophy-badge{ width:64px; height:64px; }
+  .trophy-badge{ width:68px; height:68px; }
 }
