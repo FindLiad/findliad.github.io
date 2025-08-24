@@ -12,7 +12,7 @@ title: "Home"
   </div>
 </section>
 
-<!-- INTRO PANEL: PROFILE (LEFT) + ABOUT/TROPHIES (RIGHT) -->
+<!-- INTRO PANEL: PROFILE (LEFT) + ABOUT (RIGHT) + TROPHIES UNDER ABOUT (LEFT-ALIGNED) -->
 <section class="panel intro-panel" aria-label="Intro and Credentials">
   <div class="intro-grid">
     <!-- LEFT: PROFILE -->
@@ -36,7 +36,7 @@ title: "Home"
       </nav>
     </div>
 
-    <!-- RIGHT: ABOUT + TROPHY -->
+    <!-- RIGHT: ABOUT + TROPHY STACKED -->
     <div class="intro-right">
       <div class="about-inner">
         <h2>About Me 👤</h2>
@@ -79,4 +79,3 @@ title: "Home"
     </li>
   </ul>
 </section>
-
