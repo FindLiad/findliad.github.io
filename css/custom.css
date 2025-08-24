@@ -1,145 +1,236 @@
-/* ===== Header (blue banner) ===== */
-.page-header .project-name { font-size: 2.8rem; font-weight: 800; letter-spacing: .2px; }
+---
+---
+
+/* ===========================
+   Modern palette, fonts, and BACKGROUND IMAGE
+   =========================== */
+
+:root{
+  /* Soft purple/blue palette that plays well with the dark teal background image */
+  --brand-1:  #7b6cf6; /* primary link */
+  --brand-2:  #9b86ff; /* hover link */
+
+  --ink-1:    #0f1222; /* headings (on light cards) */
+  --ink-2:    #374059; /* body (on light cards) */
+  --line:     #e6e7ee; /* borders on light cards */
+
+  --panel:    #ffffff;            /* card bg */
+  --panel-alpha: rgba(255,255,255,.86);
+  --panel-shadow: 0 10px 28px rgba(12, 18, 46, .12);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+}
+
+/* Type: Inter (body) & Poppins (headings) are loaded in head-custom.html */
+html{ font-size: 16px; }
+body{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  color: var(--ink-2);
+  line-height: 1.6;
+  background: #061a2a; /* fallback while image loads */
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Full-page BACKGROUND IMAGE */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('{{ site.baseurl }}/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateZ(0);
+}
+
+/* Soft gradient + bokeh overlay to match the reference vibe and improve contrast */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60vmax 60vmax at 15% 10%, rgba(123,108,246,.30), transparent 60%),
+    radial-gradient(50vmax 50vmax at 85% 20%, rgba(0, 208, 255, .18), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.28));
+  pointer-events: none;
+}
+
+/* ===========================
+   Header (clean, modern)
+   =========================== */
+.page-header{
+  background: transparent;
+  color:#fff;
+  border: none;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+.page-header .inner{ padding: 36px 16px; }
+.page-header .project-name{
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: .2px; margin: 0;
+}
 .page-header .project-tagline,
 .site-header .site-description,
-.header .subtitle { display: none !important; }
+.header .subtitle{ display:none !important; }
 
-/* Remove any stray divider above first section */
-.page-content .inner,
-.page-content .inner > *:first-child,
-.main-content,
-.main-content > *:first-child { border-top: none !important; }
+/* ===========================
+   Content container
+   =========================== */
+.page-content .inner{ padding: 24px 16px; }
 
-/* ===== Unified panel style (Why / Trophy / Featured) ===== */
+/* Panels/cards over the background */
 .panel{
-  background:#f7f7f7;
-  border:1px solid #e5e5e5;
-  border-radius:6px;
-  padding:10px 10px;
-  margin:10px 0;
+  background: var(--panel-alpha);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px 16px;
+  margin: 14px 0;
+  box-shadow: var(--panel-shadow);
+  -webkit-backdrop-filter: blur(6px) saturate(1.05);
+  backdrop-filter: blur(6px) saturate(1.05);
 }
-.panel h2{ margin:0 0 8px; font-size:1.35rem; }
-.panel p{  margin:0; font-size:.98rem; color:#555; }
+.panel h2{
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--ink-1);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0 0 10px;
+}
+.panel p{ margin:0; font-size:1rem; }
 
-/* ===== Trophy Case ===== */
+/* ===========================
+   Trophy Case
+   =========================== */
 .trophy-row{
   margin-top:10px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:nowrap;
-  justify-content:flex-start;
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-start;
 }
 .trophy-badge{
   display:inline-flex; align-items:center; justify-content:center;
-  width:74px; height:74px; border-radius:12px; background:transparent;
-  line-height:0; text-decoration:none; transition:transform .08s ease, filter .12s ease;
+  width:80px; height:80px; border-radius:14px;
+  background:#fff; border:1px solid var(--line);
+  box-shadow: var(--panel-shadow);
+  line-height:0; text-decoration:none;
+  transition: transform .08s ease, box-shadow .12s ease, filter .12s ease;
 }
-.trophy-badge:hover{ transform:translateY(-1px); filter:drop-shadow(0 2px 6px rgba(0,0,0,.12)); }
-.trophy-img{ max-width:100%; max-height:100%; width:auto; height:auto; display:block; }
+.trophy-badge:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(12,18,46,.18);
+}
+.trophy-img{ max-width:100%; max-height:100%; display:block; }
 
-/* ===== Two-column (Profile + About) ===== */
+/* ===========================
+   Two-column with FULL-HEIGHT center divider
+   =========================== */
 .two-col{
-  display:flex; align-items:flex-start; gap:0;
-  margin:10px 0 10px;      /* 10px below; next .panel has 0 top margin -> 10px total gap */
-  padding:0;
-  box-sizing:border-box;
-  overflow:hidden;          /* keep all contents inside */
+  position: relative;
+  display:flex; align-items:stretch; gap:0;
+  margin:14px 0;
+  background: var(--panel-alpha);
+  border:1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--panel-shadow);
+  overflow:hidden;
 }
-/* tighten gap before the next panel */
-.two-col + .panel{ margin-top:0; }
 
-/* Left column (desktop) */
+/* FULL-HEIGHT divider (this draws through the entire middle section) */
+.two-col::before{
+  content:"";
+  position:absolute;
+  top:0; bottom:0;          /* ensures full height */
+  left:35%;                 /* aligns with column split */
+  width:1px;
+  background: var(--line);
+  z-index:1;
+}
+
+/* Left / Right columns */
 .col-left{
-  position:relative;
   flex:0 0 35%; max-width:35%;
-  padding-right:10px;
-  display:flex; flex-direction:column; align-items:center;
+  padding:18px;
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
   box-sizing:border-box;
 }
-/* vertical divider (desktop) */
-.col-left::after{
-  content:""; position:absolute; right:-1px; width:1px; background:#e5e5e5;
-  top:0; bottom:96px;
-}
-
-/* Right column (desktop) */
 .col-right{
-  flex:0 0 65%; max-width:65%; min-width:0;   /* min-width:0 lets text shrink */
-  padding-left:10px; padding-right:10px;      /* right gutter so text never hits edge */
+  flex:0 0 65%; max-width:65%; min-width:0;
+  padding:18px;
   display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start;
   box-sizing:border-box;
 }
 
-/* About inner (shared) */
+/* About inner */
 .about-inner{
-  width:100%; max-width:640px;
-  margin:0 auto;
-  padding:0;
-  box-sizing:border-box;
-  overflow-wrap:anywhere; text-align:left;
+  width:100%; max-width:740px; margin:0 auto; padding:0; text-align:left;
 }
 
 /* Profile block */
 .top-group{ display:flex; flex-direction:column; align-items:center; text-align:center; }
-.profile-pic{ width:220px; height:220px; object-fit:cover; border-radius:50%; margin-bottom:10px; }
-.profile-name{ margin:0; font-weight:700; }
-.profile-title{ margin:5px 0 33px; color:#666; }
+.profile-pic{ width:220px; height:220px; object-fit:cover; border-radius:50%; margin-bottom:12px; box-shadow: var(--panel-shadow); }
+.profile-name{
+  margin:0; font-weight:700; font-family:"Poppins", ui-sans-serif, system-ui; color:var(--ink-1);
+}
+.profile-title{ margin:6px 0 28px; color:#6b6f84; }
 
-/* “Get in touch!” */
-.contact-label{ margin:0 0 10px; font-style:italic; color:#666; }
-
-/* Contact tiles (desktop baseline) */
-.contact-bar{ width:100%; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+/* Contact */
+.contact-label{ margin:0 0 10px; font-style:italic; color:#6b6f84; }
+.contact-bar{ width:100%; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
 .contact-btn{
-  display:grid; place-items:center; height:74px;
-  border:1px solid #ddd; border-radius:10px; background:#fff; color:inherit; text-decoration:none;
-  transition:transform .08s ease, box-shadow .12s ease, border-color .12s ease;
-  width:100%;
+  display:grid; place-items:center; height:78px;
+  border:1px solid var(--line); border-radius: var(--radius-md);
+  background:#fff; color:#20243a; text-decoration:none;
+  box-shadow: var(--panel-shadow);
+  transition: transform .08s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
 }
 .contact-btn i{ font-size:32px; }
-.contact-btn:hover{ transform:translateY(-1px); box-shadow:0 2px 10px rgba(0,0,0,.06); border-color:#cfcfcf; }
+.contact-btn:hover{
+  transform: translateY(-2px);
+  border-color: #d9dbe6;
+  box-shadow: 0 12px 28px rgba(12,18,46,.18);
+  background: #fbfbff;
+}
 
 /* Featured Projects */
 .project-list{ list-style:disc; margin-left:1.25rem; }
-.project-list li{ margin:0; }
-.project-links a{ text-decoration:none; }
-.project-links a:hover{ text-decoration:underline; }
+.project-links a{ text-decoration:none; color: var(--brand-1); font-weight:600; }
+.project-links a:hover{ text-decoration:underline; color: var(--brand-2); }
 
-/* ===== Desktop-only tightening inside the two-col box ===== */
+/* Desktop tightening */
 @media (min-width: 901px){
-  .two-col, .col-left, .col-right, .about-inner{
-    padding-top:0 !important;
-    padding-bottom:0 !important;
-  }
-  /* remove leftover bottom margins at the ends so content hugs the bottom */
+  .about-inner h2{ margin-top:4px; }
   .col-right p:last-of-type{ margin-bottom:0 !important; }
-  .col-left .contact-bar{ margin-bottom:0 !important; }
 }
 
-/* ===== Responsive (mobile) ===== */
+/* Responsive (mobile) */
 @media (max-width: 900px){
-  /* stack columns */
-  .two-col{ flex-direction:column; padding:0 16px; }
+  .page-header .inner{ padding:28px 16px; }
 
-  /* full-width columns, kill divider */
+  .two-col{
+    flex-direction:column; padding:0; border-radius: var(--radius-lg);
+  }
+  .two-col::before{ display:none; } /* hide center divider on mobile */
+
   .col-left, .col-right{ max-width:100%; flex-basis:100%; }
-  .col-left{ padding-right:0; }
-  .col-left::after{ display:none; }
+  .col-left{ padding:18px 16px; }
+  .col-right{ padding:16px; }
 
-  /* center the left stack and size nicely */
   .top-group, .contact-label, .contact-bar{
-    width:100%; max-width:420px; margin-left:auto; margin-right:auto; text-align:center;
+    width:100%; max-width:440px; margin-left:auto; margin-right:auto; text-align:center;
   }
   .profile-pic{ width:min(260px, 70vw); height:auto; aspect-ratio:1/1; }
 
-  /* contact tiles in a centered row, with space under them */
-  .contact-bar{ display:flex; justify-content:center; gap:18px; margin-bottom:16px !important; }
-  .contact-btn{ width:110px; height:110px; border-radius:16px; }
-  .contact-btn i{ font-size:44px; }
+  .contact-bar{ display:flex; justify-content:center; gap:16px; margin-bottom:12px !important; flex-wrap:wrap; }
+  .contact-btn{ width:108px; height:108px; }
 
-  /* About column centered + a little breathing room above the text block */
-  .col-right{ padding-left:0; padding-right:0; align-items:center; }
-  .about-inner{ padding-top:12px !important; }     /* gap between tiles and “About Me” */
-  .about-inner h2{ margin-bottom:8px; }            /* tighten subtitle if needed */
+  .about-inner{ padding-top:8px !important; }
 }
+
+/* Links */
+a{ color: var(--brand-1); }
+a:hover{ color: var(--brand-2); }
