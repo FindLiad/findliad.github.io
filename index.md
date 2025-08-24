@@ -12,7 +12,7 @@ title: "Home"
   </div>
 </section>
 
-<!-- INTRO PANEL: PROFILE (LEFT) + ABOUT (RIGHT) + TROPHIES UNDER ABOUT (LEFT-ALIGNED) -->
+<!-- INTRO PANEL: PROFILE (LEFT) + ABOUT/TROPHY STACK (RIGHT) -->
 <section class="panel intro-panel" aria-label="Intro and Credentials">
   <div class="intro-grid">
     <!-- LEFT: PROFILE -->
@@ -22,21 +22,24 @@ title: "Home"
         <h3 class="profile-name">Liad Mizrachi</h3>
         <p class="profile-title">Senior Product Manager</p>
       </div>
-      <p class="contact-label"><em>Get in touch! 📧</em></p>
-      <nav class="contact-bar" aria-label="Contact">
-        <a class="contact-btn" href="https://www.linkedin.com/in/liad-mizrachi/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a class="contact-btn" href="https://github.com/FindLiad" target="_blank" rel="noopener" aria-label="GitHub">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        <a class="contact-btn" href="mailto:FindLiad@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
-      </nav>
+
+      <div class="contact-block">
+        <p class="contact-label"><em>Get in touch! 📧</em></p>
+        <nav class="contact-bar" aria-label="Contact">
+          <a class="contact-btn" href="https://www.linkedin.com/in/liad-mizrachi/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a class="contact-btn" href="https://github.com/FindLiad" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a class="contact-btn" href="mailto:FindLiad@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+        </nav>
+      </div>
     </div>
 
-    <!-- RIGHT: ABOUT + TROPHY STACKED -->
+    <!-- RIGHT: ABOUT + TROPHY -->
     <div class="intro-right">
       <div class="about-inner">
         <h2>About Me 👤</h2>
@@ -44,6 +47,8 @@ title: "Home"
         <p>My path began in engineering—building models and CI/CD pipelines at NASA, then improving QA and lifecycle workflows at Lockheed Martin. I moved into product at Pegasystems, leading AI-powered initiatives on Customer Decision Hub for enterprise clients like Verizon and T-Mobile, focusing on scalable, high-impact outcomes that endure.</p>
         <p>Today, I focus on AI-enabled, data-informed experiences for operators and customers in complex environments: instrumentation from day one, dashboards that guide recurring decisions, and agile practices that turn uncertainty into progress.</p>
       </div>
+
+      <hr class="about-sep">
 
       <div class="trophy-section">
         <h2>Trophy Case 🥇</h2>
@@ -79,3 +84,4 @@ title: "Home"
     </li>
   </ul>
 </section>
+
