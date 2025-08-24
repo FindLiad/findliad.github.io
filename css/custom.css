@@ -1,7 +1,6 @@
 ---
 ---
 
-/* ========= THEME TOKENS ========= */
 :root{
   --brand-1:#7b6cf6;
   --brand-2:#9b86ff;
@@ -14,7 +13,6 @@
   --radius-md:12px;
 }
 
-/* ========= BASE ========= */
 html{font-size:16px;}
 body{
   font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -22,7 +20,7 @@ body{
   -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
 }
 
-/* Full-page background */
+/* Background image layer */
 body::before{
   content:""; position:fixed; inset:0; z-index:-2;
   background:url('{{ site.baseurl }}/images/background.jpg') center/cover no-repeat;
@@ -35,7 +33,7 @@ body::after{
     linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.24));
 }
 
-/* Kill theme’s default header */
+/* Hide theme header area */
 .page-header{display:none;}
 .page-content .inner{padding:16px;}
 
@@ -54,7 +52,7 @@ body::after{
   color:var(--ink-1); font-weight:700; font-size:1.35rem; margin:0 0 10px;
 }
 
-/* ========= HERO ========= */
+/* HERO */
 .hero-banner{
   position:relative; margin:18px 0 16px; border-radius:20px; overflow:hidden;
   box-shadow:0 18px 38px rgba(8,12,28,.28); border:1px solid rgba(255,255,255,.14);
@@ -73,12 +71,14 @@ body::after{
   text-shadow:0 2px 8px rgba(0,0,0,.6);
 }
 
-/* ========= INTRO GRID (two vertical columns with a full divider) ========= */
+/* INTRO GRID (desktop: two columns) */
 .intro-grid{
   display:grid; grid-template-columns:35% 65%; gap:0;
   position:relative; align-items:stretch;
 }
-.intro-grid::before{content:""; position:absolute; top:0; bottom:0; left:35%; width:1px; background:var(--line);}
+.intro-grid::before{
+  content:""; position:absolute; top:0; bottom:0; left:35%; width:1px; background:var(--line);
+}
 
 /* LEFT COLUMN */
 .intro-left{ padding:18px; display:flex; flex-direction:column; align-items:center; }
@@ -87,7 +87,6 @@ body::after{
 .profile-name{ margin:0; font-weight:700; color:var(--ink-1); }
 .profile-title{ margin:4px 0 6px; color:#6b6f84; }
 
-/* Contact block pinned bottom */
 .contact-block{ margin-top:auto; width:100%; display:flex; flex-direction:column; align-items:center; }
 .contact-label{ margin:0 0 6px; font-style:italic; color:#6b6f84; text-align:center; }
 .contact-bar{ width:100%; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
@@ -103,37 +102,34 @@ body::after{
 .about-inner{ max-width:720px; margin:0 0 12px 0; }
 .about-sep{ border:none; border-top:1px solid var(--line); margin:8px 0 12px; }
 
-/* Trophy section locked to the bottom so it flushes with left tiles */
 .trophy-section{ margin-top:auto; margin-bottom:0; }
 .trophy-section h2{ margin:0 0 10px; }
 .trophy-row{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-start; margin:0; padding:0; }
 .trophy-badge{ display:inline-flex; align-items:center; justify-content:center; width:80px; height:80px; border-radius:14px; background:#fff; border:1px solid var(--line); box-shadow:var(--panel-shadow); }
 .trophy-img{ max-width:100%; max-height:100%; display:block; }
 
-/* ========= PROJECTS ========= */
+/* PROJECTS */
 .project-list{ list-style:disc; margin-left:1.25rem; }
 .project-links a{ text-decoration:none; color:var(--brand-1); font-weight:600; }
 .project-links a:hover{ text-decoration:underline; color:var(--brand-2); }
 
-/* ========= STACKED LAYOUT FOR COMPRESSED DESKTOP & MOBILE ========= */
-/* Order wanted:
-   1) Hero (already top)
-   2) Profile block (left column content)
-   3) About Me
-   4) Trophy Case
-   5) Projects
+/* ======= MOBILE: STACK like compressed desktop ======= */
+/* Order:
+   Hero (already)
+   Profile (left column content)
+   About Me
+   Trophy Case
+   Projects
 */
-@media (max-width:900px){
-  /* hero just a touch taller on small screens */
+@media (max-width: 900px){
   .hero-img{ height:clamp(320px,64vw,520px); object-position:center top; }
   .hero-title{ font-size:clamp(1.6rem,7vw,2.2rem); }
   .hero-subtext{ font-size:clamp(1rem,4vw,1.15rem); max-width:92%; }
 
-  /* STACK the center section (no side-by-side) */
+  /* Stack center section */
   .intro-grid{ grid-template-columns:1fr; }
-  .intro-grid::before{ display:none; }          /* hide vertical divider */
+  .intro-grid::before{ display:none; }
 
-  /* Profile block first */
   .intro-left{ order:1; padding:14px 12px 0; }
   .profile-pic{ width:min(280px,70vw); height:auto; aspect-ratio:1/1; }
   .profile-title{ margin:4px 0 10px; }
@@ -142,19 +138,14 @@ body::after{
   .contact-btn i{ font-size:28px; }
   .contact-block{ margin-top:12px; margin-bottom:8px; }
 
-  /* About Me second */
   .intro-right{ order:2; padding:6px 12px 0; }
   .about-inner p{ font-size:1.06rem; line-height:1.68; }
   .about-sep{ margin:14px 0 12px; }
 
-  /* Trophy third (already under About Me inside .intro-right) */
   .trophy-badge{ width:74px; height:74px; }
-
-  /* Keep nice breathing room below the whole panel */
   .intro-panel{ padding-bottom:10px; }
 }
 
-/* Extra narrow phones */
 @media (max-width:420px){
   .contact-btn{ height:62px; }
   .contact-btn i{ font-size:24px; }
