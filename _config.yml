@@ -1,7 +1,11 @@
 title: "Affiliates"
 email: wowthemesnet@gmail.com
 timezone: UTC
-baseurl: "/affiliates-jekyll-theme"
+
+# GitHub Pages URL config (root site)
+url: "https://findliad.github.io"
+baseurl: ""   # empty because this repo is findliad.github.io
+
 permalink: "/:title/"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
@@ -47,10 +51,9 @@ social:
   facebook: https://www.facebook.com/bootstrapstartercom-346329609045284
   twitter: https://twitter.com/bstartercom
 
-# Plugins
-plugins: 
-- jekyll-paginate
-- jekyll-sitemap
-- jekyll-feed
-- jekyll-seo-tag
-- jekyll-archives
+# Plugins (GitHub Pages–compatible only)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
