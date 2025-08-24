@@ -74,7 +74,7 @@ body::after{
   text-shadow:0 2px 8px rgba(0,0,0,.6);
 }
 
-/* INTRO GRID (two vertical columns with a full divider) */
+/* INTRO GRID */
 .intro-grid{
   display:grid; grid-template-columns:35% 65%; gap:0;
   position:relative; align-items:stretch;
@@ -85,8 +85,7 @@ body::after{
 
 /* LEFT COLUMN */
 .intro-left{
-  padding:18px 18px 16px;   /* bottom = 16px to match panel’s inner padding */
-  display:flex; flex-direction:column; align-items:center;
+  padding:18px; display:flex; flex-direction:column; align-items:center;
 }
 .top-group{ display:flex; flex-direction:column; align-items:center; text-align:center; }
 .profile-pic{
@@ -96,10 +95,9 @@ body::after{
 .profile-name{ margin:0; font-weight:700; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; color:var(--ink-1); }
 .profile-title{ margin:4px 0 6px; color:#6b6f84; }
 
-/* Contact block pinned to column bottom */
+/* Contact block pinned bottom */
 .contact-block{
   margin-top:auto; width:100%; display:flex; flex-direction:column; align-items:center;
-  padding-bottom:0;                    /* no extra bottom padding */
 }
 .contact-label{ margin:0 0 6px; font-style:italic; color:#6b6f84; text-align:center; }
 .contact-bar{ width:100%; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
@@ -112,20 +110,19 @@ body::after{
 
 /* RIGHT COLUMN */
 .intro-right{
-  padding:18px 18px 16px;   /* bottom = 16px to mirror left */
-  display:flex; flex-direction:column; min-height:100%;
+  padding:18px; display:flex; flex-direction:column; justify-content:space-between;
 }
 .about-inner{ max-width:720px; margin:0 0 12px 0; }
 .about-sep{ border:none; border-top:1px solid var(--line); margin:8px 0 12px; }
 
-/* Trophy section locked to the bottom so it flushes with left tiles */
+/* Trophy section flush with bottom */
 .trophy-section{
-  margin-top:auto; padding-bottom:0;   /* no extra bottom padding */
+  margin-top:auto; margin-bottom:0; /* remove extra bottom push */
 }
 .trophy-section h2{ margin:0 0 10px; }
 .trophy-row{
   display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-start;
-  margin:0;                           /* remove bottom margin to match left */
+  margin:0; padding:0;
 }
 .trophy-badge{
   display:inline-flex; align-items:center; justify-content:center;
