@@ -6,35 +6,35 @@
    =========================== */
 
 :root{
-  /* Soft purple/blue palette that plays well with the dark teal background image */
-  --brand-1:  #7b6cf6; /* primary link */
-  --brand-2:  #9b86ff; /* hover link */
+  --brand-1:  #7b6cf6;
+  --brand-2:  #9b86ff;
 
-  --ink-1:    #0f1222; /* headings (on light cards) */
-  --ink-2:    #374059; /* body (on light cards) */
-  --line:     #e6e7ee; /* borders on light cards */
+  --ink-1:    #0f1222;
+  --ink-2:    #374059;
+  --line:     #e6e7ee;
 
-  --panel:    #ffffff;            /* card bg */
+  --panel:    #ffffff;
   --panel-alpha: rgba(255,255,255,.86);
   --panel-shadow: 0 10px 28px rgba(12, 18, 46, .12);
+  --radius-xl: 20px;
   --radius-lg: 16px;
   --radius-md: 12px;
 }
 
-/* Type: Inter (body) & Poppins (headings) are loaded in head-custom.html */
+/* Inter & Poppins are loaded in head-custom.html */
 html{ font-size: 16px; }
 body{
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   color: var(--ink-2);
   line-height: 1.6;
-  background: #061a2a; /* fallback while image loads */
+  background: #061a2a; /* fallback while background image loads */
   position: relative;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Full-page BACKGROUND IMAGE */
+/* FULL-PAGE BACKGROUND IMAGE */
 body::before{
   content:"";
   position: fixed;
@@ -44,66 +44,138 @@ body::before{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transform: translateZ(0);
 }
 
-/* Soft gradient + bokeh overlay to match the reference vibe and improve contrast */
+/* Overlay improves contrast with cards */
 body::after{
   content:"";
   position: fixed;
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(60vmax 60vmax at 15% 10%, rgba(123,108,246,.30), transparent 60%),
-    radial-gradient(50vmax 50vmax at 85% 20%, rgba(0, 208, 255, .18), transparent 60%),
-    linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.28));
+    radial-gradient(60vmax 60vmax at 15% 10%, rgba(123,108,246,.20), transparent 60%),
+    radial-gradient(50vmax 50vmax at 85% 20%, rgba(0, 208, 255, .12), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.24));
   pointer-events: none;
 }
 
+/* HIDE THE THEME'S DEFAULT HEADER */
+.page-header{ display:none; }
+
 /* ===========================
-   Header (clean, modern)
+   HERO BANNER
    =========================== */
-.page-header{
-  background: transparent;
-  color:#fff;
-  border: none;
-  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+.hero-banner{
+  position: relative;
+  margin: 18px 0 16px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 18px 38px rgba(8,12,28,.28);
+  border: 1px solid rgba(255,255,255,.14);
+  background: #0f2234;
 }
-.page-header .inner{ padding: 36px 16px; }
-.page-header .project-name{
-  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+.hero-img{
+  display:block;
+  width:100%;
+  height: clamp(320px, 42vw, 520px);
+  object-fit: cover;
+  filter: saturate(1.02);
+}
+
+/* Right-side overlay holding title + value card */
+.hero-overlay{
+  position:absolute;
+  inset: 0;
+  display:grid;
+  grid-template-columns: 1fr minmax(320px, 560px);
+  align-items: center;
+  padding: clamp(12px, 3vw, 24px);
+  pointer-events: none; /* only the links/buttons inside cards will accept events */
+}
+
+/* Title over image (top-left by default) */
+.hero-title{
+  grid-column: 1 / span 1;
+  align-self: start;
+  margin: clamp(8px, 2vw, 16px);
+  font-family:"Poppins", ui-sans-serif, system-ui;
+  font-size: clamp(1.6rem, 3.6vw, 3rem);
   font-weight: 800;
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: .2px; margin: 0;
+  color:#ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+  pointer-events: auto;
 }
-.page-header .project-tagline,
-.site-header .site-description,
-.header .subtitle{ display:none !important; }
+
+/* Floating card on the RIGHT over the image */
+.hero-card{
+  grid-column: 2 / span 1;
+  justify-self: end;
+  max-width: 560px;
+  background: rgba(255,255,255,.90);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: clamp(14px, 2.6vw, 20px);
+  box-shadow: 0 20px 40px rgba(8,12,28,.35);
+  -webkit-backdrop-filter: blur(4px) saturate(1.05);
+  backdrop-filter: blur(4px) saturate(1.05);
+  pointer-events: auto;
+}
+.hero-card h2{
+  font-family:"Poppins", ui-sans-serif, system-ui;
+  margin: 0 0 6px;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: var(--ink-1);
+}
+.hero-card p{
+  margin:0;
+  font-size: clamp(.95rem, 1.8vw, 1.02rem);
+  color: #39415a;
+  line-height:1.55;
+}
+
+/* Mobile: stack content, center the card below the image */
+@media (max-width: 900px){
+  .hero-overlay{
+    grid-template-columns: 1fr;
+    align-content: end;
+    gap: 10px;
+    padding: 12px;
+  }
+  .hero-title{
+    grid-column: 1 / -1;
+    margin: 8px 8px 0;
+    font-size: clamp(1.4rem, 7vw, 2.2rem);
+    text-align: left;
+  }
+  .hero-card{
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    margin: 6px 8px 10px;
+  }
+}
 
 /* ===========================
-   Content container
+   PANELS / CARDS BELOW
    =========================== */
-.page-content .inner{ padding: 24px 16px; }
+.page-content .inner{ padding: 16px; }
 
-/* Panels/cards over the background */
 .panel{
   background: var(--panel-alpha);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 16px 16px;
+  padding: 16px;
   margin: 14px 0;
   box-shadow: var(--panel-shadow);
   -webkit-backdrop-filter: blur(6px) saturate(1.05);
   backdrop-filter: blur(6px) saturate(1.05);
 }
 .panel h2{
-  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family:"Poppins", ui-sans-serif, system-ui;
   color: var(--ink-1);
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   margin: 0 0 10px;
 }
-.panel p{ margin:0; font-size:1rem; }
 
 /* ===========================
    Trophy Case
@@ -127,7 +199,7 @@ body::after{
 .trophy-img{ max-width:100%; max-height:100%; display:block; }
 
 /* ===========================
-   Two-column with FULL-HEIGHT center divider
+   Two-column with FULL-HEIGHT divider
    =========================== */
 .two-col{
   position: relative;
@@ -139,19 +211,15 @@ body::after{
   box-shadow: var(--panel-shadow);
   overflow:hidden;
 }
-
-/* FULL-HEIGHT divider (this draws through the entire middle section) */
 .two-col::before{
   content:"";
   position:absolute;
-  top:0; bottom:0;          /* ensures full height */
-  left:35%;                 /* aligns with column split */
+  top:0; bottom:0;          /* full height */
+  left:35%;                 /* aligns with split */
   width:1px;
   background: var(--line);
   z-index:1;
 }
-
-/* Left / Right columns */
 .col-left{
   flex:0 0 35%; max-width:35%;
   padding:18px;
@@ -164,21 +232,11 @@ body::after{
   display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start;
   box-sizing:border-box;
 }
-
-/* About inner */
-.about-inner{
-  width:100%; max-width:740px; margin:0 auto; padding:0; text-align:left;
-}
-
-/* Profile block */
+.about-inner{ width:100%; max-width:740px; margin:0 auto; padding:0; text-align:left; }
 .top-group{ display:flex; flex-direction:column; align-items:center; text-align:center; }
 .profile-pic{ width:220px; height:220px; object-fit:cover; border-radius:50%; margin-bottom:12px; box-shadow: var(--panel-shadow); }
-.profile-name{
-  margin:0; font-weight:700; font-family:"Poppins", ui-sans-serif, system-ui; color:var(--ink-1);
-}
+.profile-name{ margin:0; font-weight:700; font-family:"Poppins", ui-sans-serif, system-ui; color:var(--ink-1); }
 .profile-title{ margin:6px 0 28px; color:#6b6f84; }
-
-/* Contact */
 .contact-label{ margin:0 0 10px; font-style:italic; color:#6b6f84; }
 .contact-bar{ width:100%; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
 .contact-btn{
@@ -196,26 +254,15 @@ body::after{
   background: #fbfbff;
 }
 
-/* Featured Projects */
+/* Featured Projects list */
 .project-list{ list-style:disc; margin-left:1.25rem; }
 .project-links a{ text-decoration:none; color: var(--brand-1); font-weight:600; }
 .project-links a:hover{ text-decoration:underline; color: var(--brand-2); }
 
-/* Desktop tightening */
-@media (min-width: 901px){
-  .about-inner h2{ margin-top:4px; }
-  .col-right p:last-of-type{ margin-bottom:0 !important; }
-}
-
-/* Responsive (mobile) */
+/* Mobile adjustments */
 @media (max-width: 900px){
-  .page-header .inner{ padding:28px 16px; }
-
-  .two-col{
-    flex-direction:column; padding:0; border-radius: var(--radius-lg);
-  }
-  .two-col::before{ display:none; } /* hide center divider on mobile */
-
+  .two-col{ flex-direction:column; }
+  .two-col::before{ display:none; }
   .col-left, .col-right{ max-width:100%; flex-basis:100%; }
   .col-left{ padding:18px 16px; }
   .col-right{ padding:16px; }
