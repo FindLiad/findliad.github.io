@@ -1,10 +1,23 @@
-<div class="sidebar sticky-top">        
-    <div class="sidebar-section">
-        <h5><span>Newsletter</span></h5>
-        {% include newsletter.html %}
+<!-- Sidebar -->
+<div class="sidebar sticky-top pt-4">
+
+  <!-- Profile / About -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body text-center">
+      <img src="{{ '/assets/images/liad-mizrachi.jpg' | relative_url }}" alt="Liad Mizrachi" class="rounded-circle mb-3" style="width:96px;height:96px;object-fit:cover;">
+      <h5 class="mb-2">Liad Mizrachi</h5>
+      <p class="text-muted small mb-3">
+        Product manager focused on data‑driven solutions and dashboards. I ship clear, measurable outcomes.
+      </p>
+      <div class="d-flex justify-content-center">
+        <a class="btn btn-sm btn-outline-dark mx-1" target="_blank" href="{{ site.social.linkedin }}">LinkedIn</a>
+        <a class="btn btn-sm btn-outline-dark mx-1" target="_blank" href="{{ site.social.github }}">GitHub</a>
+        <a class="btn btn-sm btn-dark mx-1" href="mailto:{{ site.email }}">Email</a>
+      </div>
     </div>
-    <div class="sidebar-section">
-        <h5><span>Your Ad Here</span></h5>
-        <img src="{{site.baseurl}}/assets/images/ad.png">
-    </div>
+  </div>
+
+  <!-- Contact anchor target for footer/menu -->
+  <div id="contact"></div>
+
 </div>

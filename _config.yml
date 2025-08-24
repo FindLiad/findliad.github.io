@@ -1,21 +1,15 @@
-title: "Liad's Personal Porfolio"
-email: FindLiad@gmail.com
+title: "Affiliates"
+email: your@email.com
 timezone: UTC
-
-# GitHub Pages URL config (root site)
 url: "https://findliad.github.io"
-baseurl: ""   # empty because this repo is findliad.github.io
-
+baseurl: ""
 permalink: "/:title/"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
-author: Sal
+author: Liad
 paginate: 30
 locale: en_us
 lang: en_us
-feed_items: 10
-feed_update_period: daily
-feed_update_frequency: 1
 markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
@@ -24,25 +18,7 @@ sass:
   sass_dir: _sass
   style: :compressed
 
-
-# Authors
-authors:
-  sal:
-    name: "Liad Mizrachi"
-    display_name: "Liad"
-    avatar: 'assets/images/liad-mizrachi.jpg'  # use your own headshot path
-    email: FindLiad@Gmail.com
-    web: https://findliad.github.io
-    description: "Senior Product Manager. Data + design. Portfolio & notes."
-
-
-# Social
 social:
-  linkedin: https://www.linkedin.com/in/liad-mizrachi/
+  linkedin: https://www.linkedin.com/in/your-handle
+  github: https://github.com/FindLiad
 
-# Plugins (GitHub Pages–compatible only)
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
