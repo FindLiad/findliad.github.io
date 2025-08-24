@@ -1,9 +1,5 @@
-topmenu:
+main:
   - title: Home
-    url: /
+    url: "/"
   - title: About
-    url: /about/
-
-footermenu:
-  - title: "Contact"
-    url: "contact/"
+    url: "/about/"

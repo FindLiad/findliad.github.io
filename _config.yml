@@ -1,24 +1,4 @@
-title: "Affiliates"
-email: your@email.com
-timezone: UTC
-url: "https://findliad.github.io"
-baseurl: ""
-permalink: "/:title/"
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/favicon.ico'
-author: Liad
-paginate: 30
-locale: en_us
-lang: en_us
-markdown: kramdown
-kramdown:
-  syntax_highlighter_opts:
-    disable: true
-sass:
-  sass_dir: _sass
-  style: :compressed
-
 social:
   linkedin: https://www.linkedin.com/in/your-handle
   github: https://github.com/FindLiad
-
+email: you@findliad.com

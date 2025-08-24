@@ -1,15 +1,28 @@
 ---
 layout: page
-title: About
-permalink: "/about/"
-image: assets/images/screenshot.png
+title: About Me
+permalink: /about/
 ---
 
-This website is a demonstration to see **Affiliates Jekyll theme** in action. 
+# About Me
 
-The theme is compatible with Github pages. This demo is created with Github Pages and hosted with Github. 
+Hi, I’m Liad — a product manager who ships measurable outcomes with **SQL**, **Snowflake**, **Tableau**, and clear UX.
 
-Everything is ready for your quick setup: Blog, Categories, About, Privacy Policy, Terms of Use, Contact form, Mailchimp
+---
 
-[Get it here](https://bootstrapstarter.com/jekyll-theme-memoirs/)
+## Certifications
+- CSPO — Scrum Alliance
+- (add others)
 
+---
+
+## What I Do
+- Build product stories & data-driven dashboards  
+- Deliver decisioning, analytics, and UX for enterprise stakeholders  
+
+---
+
+## Contact
+- [LinkedIn](https://www.linkedin.com/in/your-handle)
+- [GitHub](https://github.com/FindLiad)
+- [Email](mailto:you@findliad.com)
