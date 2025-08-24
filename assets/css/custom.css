@@ -1,68 +1,63 @@
-/* ==================================================
-   Custom overrides (no Sass)
-   ================================================== */
+/* ================= Custom overrides (no Sass) ================= */
 
-/* ---------- Top nav (add spacing & hover) ---------- */
-.site-nav { display:flex; align-items:center; gap:1rem; }
-.site-nav .nav-link {
-  color: inherit; text-decoration: none; font-weight: 600;
-}
-.site-nav .nav-link:hover { text-decoration: underline; }
+/* Top nav spacing/hover (works whether menu is rendered from menus.yml or hardcoded) */
+.site-nav, .nav, .menu, .main-menu { display:flex; align-items:center; gap:1rem; }
+.site-nav a, .nav a, .menu a, .main-menu a { text-decoration:none; font-weight:600; color:inherit; }
+.site-nav a:hover, .nav a:hover, .menu a:hover, .main-menu a:hover { text-decoration:underline; }
 
-/* ---------- “Follow” icons – size, clarity, spacing ---------- */
-.site-header .follow,
-.header-follow { display:flex; align-items:center; gap:.5rem; }
+/* ---------- Header "Follow" icons ---------- */
+/* Target common wrappers used by themes */
+.follow, .header-follow, .social-icons, .top-social { display:flex; align-items:center; gap:.5rem; }
 
-.site-header .follow a,
-.header-follow a {
+/* Normalize the buttons */
+.follow a, .header-follow a, .social-icons a, .top-social a {
   display:inline-flex; align-items:center; justify-content:center;
   width:28px; height:28px; border-radius:50%;
-  border:1px solid #e6e6e6; text-decoration:none;
+  border:1px solid #e6e6e6; background:#fff; opacity:.95;
+  text-decoration:none;
   transition:transform .12s ease, border-color .12s ease, opacity .12s ease;
-  opacity:.9; background:#fff;
 }
-.site-header .follow a:hover,
-.header-follow a:hover { transform:translateY(-1px); opacity:1; border-color:#cfcfcf; }
-
-/* Support <svg>, <i>, or <img> icons */
-.site-header .follow a svg,
-.header-follow a svg { width:18px; height:18px; stroke-width:1.6; }
-.site-header .follow a i,
-.header-follow a i   { font-size:16px; line-height:1; }
-.site-header .follow a img,
-.header-follow a img { width:18px; height:18px; object-fit:contain; filter:none; }
-
-/* Kill any theme blur/opacity applied to icons */
-.site-header .follow a svg,
-.site-header .follow a img { filter:none !important; opacity:1 !important; }
-
-/* Optional: tone down the “Follow in” label (or hide it) */
-.site-header .follow-label { opacity:.6; font-size:.9rem; margin-right:.35rem; }
-/* To hide entirely, uncomment: */
-/* .site-header .follow-label { display:none; } */
-
-
-/* ---------- About card — remove the wonky horizontal bar ---------- */
-/* If it’s a literal <hr> */
-.about-card hr,
-.author-card hr,
-.sidebar .author hr,
-.author-bio hr { display:none; }
-
-/* If it’s a pseudo-element under the name/title */
-.author-name::after,
-.sidebar .author h3::after,
-.sidebar .author h2::after {
-  content:""; display:block; width:0; height:0; background:transparent; margin:0;
+.follow a:hover, .header-follow a:hover, .social-icons a:hover, .top-social a:hover {
+  transform:translateY(-1px); opacity:1; border-color:#cfcfcf;
 }
 
-/* Tidy spacing/alignment inside the about card */
-.author-card,
-.about-card,
-.sidebar .author { text-align:center; }
-.author-card .social,
-.about-card .social { margin-top:.5rem; }
+/* Make icons crisp whether they are <svg>, <i>, or <img> */
+.follow a svg, .header-follow a svg, .social-icons a svg, .top-social a svg { width:18px; height:18px; }
+.follow a i,   .header-follow a i,   .social-icons a i,   .top-social a i   { font-size:16px; line-height:1; }
+.follow a img, .header-follow a img, .social-icons a img, .top-social a img { width:18px; height:18px; object-fit:contain; filter:none; }
+.follow a svg, .follow a img { filter:none !important; opacity:1 !important; }
 
-/* ---------- Minor polish for project tiles (optional safe tweaks) ---------- */
+/* Show ONLY LinkedIn, GitHub, Email if the theme renders others */
+/* Try attribute first, then common classes as fallback */
+.follow a[aria-label*="Twitter" i],
+.follow a[aria-label*="X" i],
+.follow a[aria-label*="Facebook" i],
+.follow a[aria-label*="Instagram" i],
+.social-icons .icon-twitter, .social-icons .icon-facebook, .social-icons .icon-instagram,
+.top-social .icon-twitter, .top-social .icon-facebook, .top-social .icon-instagram { display:none !important; }
+
+/* ---------- About/author card — remove the horizontal bar ---------- */
+/* If it's an <hr> anywhere in the author/about widget */
+.about-card hr, .author-card hr, .sidebar .author hr, .author hr, .author-bio hr { display:none !important; }
+
+/* If it's a border-bottom on the name line */
+.author-name, .author__name, .sidebar .author h2, .sidebar .author h3 {
+  border-bottom: 0 !important;
+  position: relative;
+}
+
+/* If it's a pseudo element divider */
+.author-name::after, .author__name::after,
+.sidebar .author h2::after, .sidebar .author h3::after,
+.about-card .title::after, .author-bio .title::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Tidy spacing */
+.author-card, .about-card, .sidebar .author { text-align:center; }
+.author-card .social, .about-card .social, .sidebar .author .social { margin-top:.5rem; }
+
+/* ---------- Optional polish for project tiles ---------- */
 .post-card img, .project-card img { border-radius:10px; }
-.post-card:hover, .project-card:hover { transform: translateY(-2px); transition: transform .12s ease; }
+.post-card:hover, .project-card:hover { transform:translateY(-2px); transition:transform .12s ease; }

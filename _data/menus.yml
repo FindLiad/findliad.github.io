@@ -1,6 +1,8 @@
 topmenu:
-  - title: "Home"
-    url: ""
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
 
 footermenu:
   - title: "Contact"
