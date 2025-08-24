@@ -90,16 +90,16 @@ body::after{
 .top-group{ display:flex; flex-direction:column; align-items:center; text-align:center; }
 .profile-pic{
   width:280px; height:280px; object-fit:cover; border-radius:50%;
-  margin-bottom:14px; box-shadow:var(--panel-shadow);
+  margin-bottom:10px; box-shadow:var(--panel-shadow);
 }
 .profile-name{ margin:0; font-weight:700; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; color:var(--ink-1); }
-.profile-title{ margin:6px 0 24px; color:#6b6f84; }
+.profile-title{ margin:4px 0 12px; color:#6b6f84; }
 
-/* Contact block pinned bottom, with padding to match right column bottom */
+/* Contact block pinned bottom, padding aligned with right column */
 .contact-block{
-  margin-top:auto; width:100%; padding-bottom:18px; /* ensures equal bottom spacing */
+  margin-top:auto; width:100%; padding-bottom:18px;
 }
-.contact-label{ margin:0 0 10px; font-style:italic; color:#6b6f84; text-align:center; }
+.contact-label{ margin:0 0 8px; font-style:italic; color:#6b6f84; text-align:center; }
 .contact-bar{ width:100%; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
 .contact-btn{
   display:grid; place-items:center; height:78px;
@@ -110,9 +110,9 @@ body::after{
 
 /* RIGHT COLUMN */
 .intro-right{ padding:18px; display:flex; flex-direction:column; }
-.about-inner{ max-width:720px; margin:0 0 16px 0; }
-.about-sep{ border:none; border-top:1px solid var(--line); margin:10px 0 12px; }
-.trophy-section{ padding-bottom:18px; } /* ensure same padding as left */
+.about-inner{ max-width:720px; margin:0 0 14px 0; }
+.about-sep{ border:none; border-top:1px solid var(--line); margin:8px 0 12px; }
+.trophy-section{ padding-bottom:18px; }
 .trophy-section h2{ margin:0 0 10px; }
 .trophy-row{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-start; margin-bottom:0; }
 .trophy-badge{
