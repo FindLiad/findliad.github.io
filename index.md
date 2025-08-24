@@ -12,7 +12,7 @@ title: "Home"
   </div>
 </section>
 
-<!-- INTRO PANEL: ABOUT (RIGHT) + PROFILE (LEFT) + TROPHY CASE (FULL-WIDTH) -->
+<!-- INTRO PANEL: PROFILE (LEFT) + ABOUT/TROPHIES (RIGHT) -->
 <section class="panel intro-panel" aria-label="Intro and Credentials">
   <div class="intro-grid">
     <!-- LEFT: PROFILE -->
@@ -36,7 +36,7 @@ title: "Home"
       </nav>
     </div>
 
-    <!-- RIGHT: ABOUT -->
+    <!-- RIGHT: ABOUT + TROPHY -->
     <div class="intro-right">
       <div class="about-inner">
         <h2>About Me 👤</h2>
@@ -44,23 +44,22 @@ title: "Home"
         <p>My path began in engineering—building models and CI/CD pipelines at NASA, then improving QA and lifecycle workflows at Lockheed Martin. I moved into product at Pegasystems, leading AI-powered initiatives on Customer Decision Hub for enterprise clients like Verizon and T-Mobile, focusing on scalable, high-impact outcomes that endure.</p>
         <p>Today, I focus on AI-enabled, data-informed experiences for operators and customers in complex environments: instrumentation from day one, dashboards that guide recurring decisions, and agile practices that turn uncertainty into progress.</p>
       </div>
+
+      <div class="trophy-section">
+        <h2>Trophy Case 🥇</h2>
+        <div class="trophy-row" role="list">
+          <a class="trophy-badge" href="https://achieve.snowflake.com/de6a8975-e11f-4785-90e3-9666c3ef468e#acc.ZX9lSow3" target="_blank" rel="noopener" aria-label="Snowflake Credential 1" role="listitem">
+            <img class="trophy-img" src="{{ site.baseurl }}/images/badges/snowflake1.png" alt="Snowflake Credential 1">
+          </a>
+          <a class="trophy-badge" href="https://achieve.snowflake.com/93121afa-094f-4223-b278-508051e48a46#acc.mduLZGOw" target="_blank" rel="noopener" aria-label="Snowflake Credential 2" role="listitem">
+            <img class="trophy-img" src="{{ site.baseurl }}/images/badges/snowflake2.png" alt="Snowflake Credential 2">
+          </a>
+          <a class="trophy-badge" href="https://certification.scrumalliance.org/accounts/1772540-liad-mizrachi/certifications/2103507-cspo" target="_blank" rel="noopener" aria-label="CSPO Certification" role="listitem">
+            <img class="trophy-img" src="{{ site.baseurl }}/images/badges/cspo.png" alt="CSPO Certification">
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <hr class="intro-sep">
-
-  <!-- TROPHY CASE (FULL-WIDTH, CENTERED) -->
-  <h2 class="centered-heading">Trophy Case 🥇</h2>
-  <div class="trophy-row" role="list">
-    <a class="trophy-badge" href="https://achieve.snowflake.com/de6a8975-e11f-4785-90e3-9666c3ef468e#acc.ZX9lSow3" target="_blank" rel="noopener" aria-label="Snowflake Credential 1" role="listitem">
-      <img class="trophy-img" src="{{ site.baseurl }}/images/badges/snowflake1.png" alt="Snowflake Credential 1">
-    </a>
-    <a class="trophy-badge" href="https://achieve.snowflake.com/93121afa-094f-4223-b278-508051e48a46#acc.mduLZGOw" target="_blank" rel="noopener" aria-label="Snowflake Credential 2" role="listitem">
-      <img class="trophy-img" src="{{ site.baseurl }}/images/badges/snowflake2.png" alt="Snowflake Credential 2">
-    </a>
-    <a class="trophy-badge" href="https://certification.scrumalliance.org/accounts/1772540-liad-mizrachi/certifications/2103507-cspo" target="_blank" rel="noopener" aria-label="CSPO Certification" role="listitem">
-      <img class="trophy-img" src="{{ site.baseurl }}/images/badges/cspo.png" alt="CSPO Certification">
-    </a>
   </div>
 </section>
 
@@ -80,3 +79,4 @@ title: "Home"
     </li>
   </ul>
 </section>
+
