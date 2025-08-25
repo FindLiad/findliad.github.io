@@ -65,9 +65,17 @@ body::after{
 /* LEFT COLUMN */
 .intro-left{ padding:18px; display:flex; flex-direction:column; align-items:center; }
 .top-group{ display:flex; flex-direction:column; align-items:center; text-align:center; overflow:visible; }
+
+/* Base avatar (mobile/tablet fallback) */
 .profile-pic{ width:260px; height:260px; object-fit:cover; border-radius:50%; margin-bottom:10px; box-shadow:var(--panel-shadow); }
+
+/* Name + title */
 .profile-name{ margin:0; font-weight:700; color:#0f1222; }
 .profile-title{ margin:4px 0 6px; color:#6b6f84; }
+
+/* NEW: compact degrees */
+.degrees-block{ color:#6b6f84; font-size:inherit; font-style:italic; margin:0 0 12px; }
+.profile-deg{ margin:0; font-style:inherit; color:inherit; }
 
 /* Contact */
 .contact-block{ margin-top:auto; width:100%; display:flex; flex-direction:column; align-items:center; }
@@ -119,7 +127,7 @@ body::after{
 .project-title{ margin:0 0 6px; font-weight:800; font-size:1.1rem; }
 .project-blurb{ margin:0 0 10px; font-weight:600; font-size:.98rem; opacity:.95; }
 
-/* Only buttons/links are interactive */
+/* Buttons (only interactive parts) */
 .project-ctas{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
 .pill-btn{
   display:inline-flex; align-items:center; gap:6px; padding:8px 12px;
@@ -134,7 +142,7 @@ body::after{
 .text-link:hover{ text-decoration:underline; }
 
 /* ========= RESPONSIVE ========= */
-/* Compressed desktop & tablet (<=900px): now add faint divider + equal gaps */
+/* Compressed desktop & tablet */
 @media (max-width:900px){
   .hero-img{ height:clamp(320px,64vw,520px); object-position:center top; }
 
@@ -146,17 +154,17 @@ body::after{
 
   .intro-right{ order:2; padding:6px 12px 0; position:relative; }
 
-  /* NEW (compressed desktop/tablet): faint divider between contact tiles and About Me */
+  /* Faint divider between contact tiles and About Me */
   .intro-right::before{
     content:"";
     display:block;
     height:1px;
-    background:rgba(255,255,255,.55); /* faint like desktop */
-    margin:16px 0;                    /* equal space above & below */
+    background:rgba(255,255,255,.55);
+    margin:16px 0;  /* equal space above & below */
     border-radius:1px;
   }
 
-  /* Ensure About↔Trophy divider is also faint & symmetric */
+  /* Faint + symmetric About↔Trophy divider */
   .about-sep{
     border-top:1px solid rgba(255,255,255,.55);
     margin:16px 0 !important;
@@ -170,19 +178,19 @@ body::after{
   .project-hero{ height:240px; }
 }
 
-/* MOBILE-ONLY (<=600px): same faint divider & equal gaps */
+/* Mobile */
 @media (max-width:600px){
   .intro-right{ position:relative; }
   .intro-right::before{
     content:"";
     display:block;
     height:1px;
-    background:rgba(255,255,255,.55); /* made fainter */
+    background:rgba(255,255,255,.55);
     margin:16px 0;
     border-radius:1px;
   }
   .about-sep{
-    border-top:1px solid rgba(255,255,255,.55); /* made fainter */
+    border-top:1px solid rgba(255,255,255,.55);
     margin:16px 0 !important;
   }
 }
@@ -193,11 +201,22 @@ body::after{
   .project-blurb{ font-size:.95rem; }
 }
 
-/* ========= DESKTOP-ONLY TUNING (regular desktop ONLY) ========= */
+/* ========= DESKTOP-ONLY TUNING (>=901px) ========= */
 @media (min-width:901px){
-  .profile-pic{ width:340px; height:340px; }
-  .intro-left{ justify-content:center; gap:12px; }
+  /* Keep avatar inside left column and away from divider */
+  .intro-grid{ grid-template-columns:minmax(360px, 35%) 1fr; }
+
+  .intro-left{ justify-content:center; gap:12px; padding-right:24px; } /* adds breathing room from vertical divider */
+
+  .profile-pic{
+    width:clamp(300px, 32vw, 360px);           /* responsive but bounded */
+    max-width:calc(100% - 28px);               /* never overflow column */
+    height:auto;
+    aspect-ratio:1/1;
+  }
+
   .profile-name{ margin:0 0 6px 0; }
   .profile-title{ margin:0 0 12px 0; color:#505765; } /* darker gray */
+  .degrees-block{ margin:0 0 12px; } /* double the name→title gap (6px) */
   .contact-block{ margin-top:0; }
 }

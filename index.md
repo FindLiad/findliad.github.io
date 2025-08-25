@@ -20,7 +20,14 @@ title: "Home"
       <img src="{{ site.baseurl }}/images/liad-mizrachi.jpg" alt="Liad Mizrachi" class="profile-pic">
       <h3 class="profile-name">Liad Mizrachi</h3>
       <p class="profile-title">Senior Product Manager</p>
+
+      <!-- NEW: Degrees (compact), italic, same size/color as title -->
+      <div class="degrees-block">
+        <p class="profile-deg">M.S., Systems Engineering — Penn ’22</p>
+        <p class="profile-deg">B.S., Mechanical Engineering — UCF ’19</p>
+      </div>
     </div>
+
     <div class="contact-block">
       <p class="contact-label"><em>Get in touch! 📧</em></p>
       <div class="contact-bar">
@@ -66,8 +73,8 @@ title: "Home"
   <div class="projects-grid">
     <!-- Project 1 -->
     <article class="project-card">
+      <span class="project-corner">Project 1</span>
       <img class="project-hero" src="{{ site.baseurl }}/images/project1photo.png" alt="YouTube Campaign Analytics Visualization thumbnail">
-      <div class="project-corner">Project 1</div>
       <div class="project-overlay">
         <h3 class="project-title">YouTube Campaign Analytics Visualization</h3>
         <p class="project-blurb">Explainable KPIs + consolidated analysis for data-backed decisions.</p>
@@ -80,8 +87,8 @@ title: "Home"
 
     <!-- Project 2 -->
     <article class="project-card">
+      <span class="project-corner">Project 2</span>
       <img class="project-hero" src="{{ site.baseurl }}/images/project2photo.png" alt="Human Resources Dashboard thumbnail">
-      <div class="project-corner">Project 2</div>
       <div class="project-overlay">
         <h3 class="project-title">Human Resources Data Visualization Dashboard</h3>
         <p class="project-blurb">End-to-end HR insights: hiring, retention, performance, and trends.</p>
