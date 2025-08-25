@@ -128,50 +128,46 @@ body::after{
   transition:transform .08s ease, filter .15s ease;
 }
 .pill-btn:hover{ filter:brightness(1.04); transform:translateY(-1px); }
-.pill-btn.pill-ghost{
-  background:transparent; color:#ffffff; border:1px solid rgba(255,255,255,.9);
-}
+.pill-btn.pill-ghost{ background:transparent; color:#ffffff; border:1px solid rgba(255,255,255,.9); }
 .pill-btn.pill-ghost:hover{ background:rgba(255,255,255,.1); }
 .text-link{ color:#cbd2ff; text-decoration:none; font-weight:700; }
 .text-link:hover{ text-decoration:underline; }
 
 /* ========= RESPONSIVE ========= */
+/* Compressed desktop/tablet – keep existing behavior, NO extra divider here */
 @media (max-width:900px){
   .hero-img{ height:clamp(320px,64vw,520px); object-position:center top; }
-
   .intro-grid{ grid-template-columns:1fr; }
   .intro-grid::before{ display:none; }
-
   .intro-left{ order:1; padding:14px 12px 0; }
   .profile-pic{ width:min(280px,70vw); height:auto; aspect-ratio:1/1; }
+  .intro-right{ order:2; padding:6px 12px 0; }
+  .about-sep{ border-top:1px solid var(--line); margin:14px 0 12px; } /* unchanged for compressed desktop */
+  .intro-right::before{ display:none; } /* prevent divider on compressed desktop */
+  .trophy-img{ height:74px; }
+  .projects-grid{ grid-template-columns:1fr; }
+  .project-hero{ height:240px; }
+}
 
-  .intro-right{ order:2; padding:6px 12px 0; position:relative; }
-
-  /* NEW: white divider *between* contact tiles and About Me */
+/* MOBILE-ONLY TWEAKS (stacked layout + new divider + equal gaps) */
+@media (max-width:600px){
+  .intro-right{ position:relative; }
+  /* New white divider between contact tiles and About Me */
   .intro-right::before{
     content:"";
     display:block;
     height:1px;
-    background:rgba(255,255,255,.9);
+    background:rgba(255,255,255,.95);
     margin:16px 0;              /* equal space above & below */
     border-radius:1px;
   }
-
-  /* Ensure equal spacing around the About↔Trophy divider too */
+  /* Make the About↔Trophy divider symmetric too */
   .about-sep{
-    border-top:1px solid rgba(255,255,255,.9);
-    margin:16px 0;              /* equal space above & below */
+    border-top:1px solid rgba(255,255,255,.95);
+    margin:16px 0 !important;   /* equal space above & below */
   }
-
-  /* Remove extra top/bottom padding that could break symmetry */
-  .intro-right .about-inner{ margin-top:0; }
-  .intro-right .about-inner h2{ margin-top:0; }
-  .intro-right .about-inner p:last-of-type{ margin-bottom:0; }
-
-  .trophy-img{ height:74px; }
-
-  .projects-grid{ grid-template-columns:1fr; }
-  .project-hero{ height:240px; }
+  /* Avoid extra bottom margin on last paragraph above the divider */
+  .about-inner p:last-of-type{ margin-bottom:0; }
 }
 
 @media (max-width:420px){
@@ -182,16 +178,9 @@ body::after{
 
 /* ========= DESKTOP-ONLY TUNING (regular desktop ONLY) ========= */
 @media (min-width:901px){
-  /* Bigger avatar on desktop */
   .profile-pic{ width:340px; height:340px; }
-
-  /* Vertically center the whole left column within the panel */
   .intro-left{ justify-content:center; gap:12px; }
-
-  /* Tight text spacing under avatar */
   .profile-name{ margin:0 0 6px 0; }
   .profile-title{ margin:0 0 12px 0; color:#505765; } /* darker gray */
-
-  /* Keep the contact block participating in centering (not pushed down) */
   .contact-block{ margin-top:0; }
 }

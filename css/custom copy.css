@@ -99,6 +99,8 @@ body::after{
 .project-hero{
   width:100%; height:clamp(220px,26vw,300px); object-fit:cover; object-position:center center; display:block;
 }
+
+/* Corner title (TOP-LEFT) */
 .project-corner{
   position:absolute; top:10px; left:10px; z-index:2;
   padding:6px 10px; border-radius:999px;
@@ -107,6 +109,8 @@ body::after{
   border:1px solid rgba(255,255,255,.55);
   backdrop-filter:blur(4px);
 }
+
+/* Bottom overlay */
 .project-overlay{
   position:absolute; inset:auto 0 0 0; padding:16px 16px 14px;
   color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.45);
@@ -114,6 +118,8 @@ body::after{
 }
 .project-title{ margin:0 0 6px; font-weight:800; font-size:1.1rem; }
 .project-blurb{ margin:0 0 10px; font-weight:600; font-size:.98rem; opacity:.95; }
+
+/* Only buttons/links are interactive */
 .project-ctas{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
 .pill-btn{
   display:inline-flex; align-items:center; gap:6px; padding:8px 12px;
@@ -138,8 +144,30 @@ body::after{
 
   .intro-left{ order:1; padding:14px 12px 0; }
   .profile-pic{ width:min(280px,70vw); height:auto; aspect-ratio:1/1; }
-  .intro-right{ order:2; padding:6px 12px 0; }
-  .about-sep{ margin:14px 0 12px; }
+
+  .intro-right{ order:2; padding:6px 12px 0; position:relative; }
+
+  /* NEW: white divider *between* contact tiles and About Me */
+  .intro-right::before{
+    content:"";
+    display:block;
+    height:1px;
+    background:rgba(255,255,255,.9);
+    margin:16px 0;              /* equal space above & below */
+    border-radius:1px;
+  }
+
+  /* Ensure equal spacing around the About↔Trophy divider too */
+  .about-sep{
+    border-top:1px solid rgba(255,255,255,.9);
+    margin:16px 0;              /* equal space above & below */
+  }
+
+  /* Remove extra top/bottom padding that could break symmetry */
+  .intro-right .about-inner{ margin-top:0; }
+  .intro-right .about-inner h2{ margin-top:0; }
+  .intro-right .about-inner p:last-of-type{ margin-bottom:0; }
+
   .trophy-img{ height:74px; }
 
   .projects-grid{ grid-template-columns:1fr; }
