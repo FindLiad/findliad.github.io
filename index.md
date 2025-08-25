@@ -24,7 +24,7 @@ title: "Home"
       <!-- NEW: Degrees (compact), italic, same size/color as title -->
       <div class="degrees-block">
         <p class="profile-deg">M.S., Systems Engineering — Penn ’22</p>
-        <p class="profile-deg">B.S., Mechanical Engineering — UCF ’19</p>
+        <p class="profile-deg">B.S., Mech. Engineering — UCF ’19</p>
       </div>
     </div>
 
