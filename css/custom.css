@@ -176,15 +176,25 @@ body::after{
 }
 
 /* ========= DESKTOP-ONLY (>=901px) ========= */
-/* Use a border on the LEFT COLUMN instead of an overlay ::before line.
-   This guarantees the divider sits exactly on the column boundary regardless
-   of padding or scaling. */
 @media (min-width:901px){
   .intro-grid{ grid-template-columns:minmax(360px, 35%) 1fr; }
 
-  /* Remove the old absolute divider and draw it on the column edge */
+  /* Remove absolute divider and draw it on the column edge
+     so it always sits perfectly between columns */
   .intro-grid::before{ display:none; }
-  .intro-left{ border-right:1px solid var(--line); padding-right:24px; }
+
+  .intro-left{
+    border-right:1px solid var(--line);
+    padding-right:24px;
+
+    /* Center the whole stack vertically */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+  }
+
   .intro-right{ padding-left:24px; padding-right:18px; }
 
   .profile-pic{
