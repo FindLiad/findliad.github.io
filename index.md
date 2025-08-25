@@ -13,7 +13,6 @@ title: "Home"
 </section>
 
 <!-- INTRO: PROFILE (LEFT) + ABOUT/TROPHY (RIGHT) -->
-<!-- INTRO: PROFILE (LEFT) + ABOUT/TROPHY (RIGHT) -->
 <section class="panel intro-grid">
   <!-- LEFT COLUMN -->
   <div class="intro-left">
@@ -68,6 +67,7 @@ title: "Home"
     <!-- Project 1 -->
     <article class="project-card">
       <img class="project-hero" src="{{ site.baseurl }}/images/project1photo.png" alt="YouTube Campaign Analytics Visualization thumbnail">
+      <div class="project-corner">Project 1</div>
       <div class="project-overlay">
         <h3 class="project-title">YouTube Campaign Analytics Visualization</h3>
         <p class="project-blurb">Explainable KPIs + consolidated analysis for data-backed decisions.</p>
@@ -82,11 +82,13 @@ title: "Home"
     <!-- Project 2 -->
     <article class="project-card">
       <img class="project-hero" src="{{ site.baseurl }}/images/project2photo.png" alt="Human Resources Dashboard thumbnail">
+      <div class="project-corner">Project 2</div>
       <div class="project-overlay">
         <h3 class="project-title">Human Resources Data Visualization Dashboard</h3>
         <p class="project-blurb">End-to-end HR insights: hiring, retention, performance, and trends.</p>
         <div class="project-ctas">
           <a class="pill-btn" href="https://findliad.github.io/Human-Resources-Data-Visualization-Dashboard/#site-top" target="_blank" rel="noopener">View Project</a>
+          <a class="text-link" href="https://github.com/FindLiad/Human-Resources-Data-Visualization-Dashboard" target="_blank" rel="noopener">View Code</a>
         </div>
       </div>
       <a class="project-full-link" href="https://findliad.github.io/Human-Resources-Data-Visualization-Dashboard/#site-top" target="_blank" rel="noopener" aria-label="Open project: HR Dashboard"></a>
