@@ -73,10 +73,9 @@ title: "Home"
         <p class="project-blurb">Explainable KPIs + consolidated analysis for data-backed decisions.</p>
         <div class="project-ctas">
           <a class="pill-btn" href="https://findliad.github.io/Data-Backed-Decision-Making-for-Youtube-Campaigns/" target="_blank" rel="noopener">View Project</a>
-          <a class="text-link" href="https://github.com/FindLiad/Data-Backed-Decision-Making-for-Youtube-Campaigns" target="_blank" rel="noopener">View Code</a>
+          <a class="pill-btn pill-ghost" href="https://github.com/FindLiad/Data-Backed-Decision-Making-for-Youtube-Campaigns" target="_blank" rel="noopener">View Code</a>
         </div>
       </div>
-      <a class="project-full-link" href="https://findliad.github.io/Data-Backed-Decision-Making-for-Youtube-Campaigns/" target="_blank" rel="noopener" aria-label="Open project: YouTube Campaign Analytics"></a>
     </article>
 
     <!-- Project 2 -->
@@ -88,10 +87,9 @@ title: "Home"
         <p class="project-blurb">End-to-end HR insights: hiring, retention, performance, and trends.</p>
         <div class="project-ctas">
           <a class="pill-btn" href="https://findliad.github.io/Human-Resources-Data-Visualization-Dashboard/#site-top" target="_blank" rel="noopener">View Project</a>
-          <a class="text-link" href="https://github.com/FindLiad/Human-Resources-Data-Visualization-Dashboard" target="_blank" rel="noopener">View Code</a>
+          <a class="pill-btn pill-ghost" href="https://github.com/FindLiad/Human-Resources-Data-Visualization-Dashboard" target="_blank" rel="noopener">View Code</a>
         </div>
       </div>
-      <a class="project-full-link" href="https://findliad.github.io/Human-Resources-Data-Visualization-Dashboard/#site-top" target="_blank" rel="noopener" aria-label="Open project: HR Dashboard"></a>
     </article>
   </div>
 </section>
