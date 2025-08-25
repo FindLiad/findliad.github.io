@@ -94,7 +94,7 @@ body::after{
   position:relative; border-radius:16px; overflow:hidden;
   border:1px solid rgba(255,255,255,.18); box-shadow:0 14px 32px rgba(12,18,46,.18);
   background:#0e1530;
-  cursor:default;
+  cursor:default; /* tile itself is not clickable */
 }
 .project-hero{
   width:100%; height:clamp(220px,26vw,300px); object-fit:cover; object-position:center center; display:block;
@@ -102,8 +102,10 @@ body::after{
 .project-corner{
   position:absolute; top:10px; left:10px; z-index:2;
   padding:6px 10px; border-radius:999px;
-  background:rgba(0,0,0,.45); color:#fff; font-weight:800; font-size:.9rem;
-  border:1px solid rgba(255,255,255,.55); backdrop-filter:blur(4px);
+  background:rgba(0,0,0,.45);
+  color:#fff; font-weight:800; font-size:.9rem;
+  border:1px solid rgba(255,255,255,.55);
+  backdrop-filter:blur(4px);
 }
 .project-overlay{
   position:absolute; inset:auto 0 0 0; padding:16px 16px 14px;
@@ -120,7 +122,9 @@ body::after{
   transition:transform .08s ease, filter .15s ease;
 }
 .pill-btn:hover{ filter:brightness(1.04); transform:translateY(-1px); }
-.pill-btn.pill-ghost{ background:transparent; color:#ffffff; border:1px solid rgba(255,255,255,.9); }
+.pill-btn.pill-ghost{
+  background:transparent; color:#ffffff; border:1px solid rgba(255,255,255,.9);
+}
 .pill-btn.pill-ghost:hover{ background:rgba(255,255,255,.1); }
 .text-link{ color:#cbd2ff; text-decoration:none; font-weight:700; }
 .text-link:hover{ text-decoration:underline; }
@@ -128,32 +132,38 @@ body::after{
 /* ========= RESPONSIVE ========= */
 @media (max-width:900px){
   .hero-img{ height:clamp(320px,64vw,520px); object-position:center top; }
+
   .intro-grid{ grid-template-columns:1fr; }
   .intro-grid::before{ display:none; }
+
   .intro-left{ order:1; padding:14px 12px 0; }
   .profile-pic{ width:min(280px,70vw); height:auto; aspect-ratio:1/1; }
   .intro-right{ order:2; padding:6px 12px 0; }
   .about-sep{ margin:14px 0 12px; }
   .trophy-img{ height:74px; }
+
   .projects-grid{ grid-template-columns:1fr; }
   .project-hero{ height:240px; }
 }
+
 @media (max-width:420px){
   .trophy-img{ height:68px; }
   .project-title{ font-size:1.05rem; }
   .project-blurb{ font-size:.95rem; }
 }
 
-/* ========= DESKTOP-ONLY TUNING (does NOT affect mobile/compressed) ========= */
+/* ========= DESKTOP-ONLY TUNING (regular desktop ONLY) ========= */
 @media (min-width:901px){
   /* Bigger avatar on desktop */
-  .profile-pic{ width:300px; height:300px; }
+  .profile-pic{ width:340px; height:340px; }
 
-  /* Tighten text spacing under the avatar:
-     name → title = 6px;  title → “Get in touch!” = 12px  */
+  /* Vertically center the whole left column within the panel */
+  .intro-left{ justify-content:center; gap:12px; }
+
+  /* Tight text spacing under avatar */
   .profile-name{ margin:0 0 6px 0; }
   .profile-title{ margin:0 0 12px 0; color:#505765; } /* darker gray */
 
-  /* Bring “Get in touch!” block closer – override the baseline auto push */
+  /* Keep the contact block participating in centering (not pushed down) */
   .contact-block{ margin-top:0; }
 }
