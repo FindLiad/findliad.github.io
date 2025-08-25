@@ -134,40 +134,57 @@ body::after{
 .text-link:hover{ text-decoration:underline; }
 
 /* ========= RESPONSIVE ========= */
-/* Compressed desktop/tablet – keep existing behavior, NO extra divider here */
+/* Compressed desktop & tablet (<=900px): now add faint divider + equal gaps */
 @media (max-width:900px){
   .hero-img{ height:clamp(320px,64vw,520px); object-position:center top; }
+
   .intro-grid{ grid-template-columns:1fr; }
   .intro-grid::before{ display:none; }
+
   .intro-left{ order:1; padding:14px 12px 0; }
   .profile-pic{ width:min(280px,70vw); height:auto; aspect-ratio:1/1; }
-  .intro-right{ order:2; padding:6px 12px 0; }
-  .about-sep{ border-top:1px solid var(--line); margin:14px 0 12px; } /* unchanged for compressed desktop */
-  .intro-right::before{ display:none; } /* prevent divider on compressed desktop */
-  .trophy-img{ height:74px; }
-  .projects-grid{ grid-template-columns:1fr; }
-  .project-hero{ height:240px; }
-}
 
-/* MOBILE-ONLY TWEAKS (stacked layout + new divider + equal gaps) */
-@media (max-width:600px){
-  .intro-right{ position:relative; }
-  /* New white divider between contact tiles and About Me */
+  .intro-right{ order:2; padding:6px 12px 0; position:relative; }
+
+  /* NEW (compressed desktop/tablet): faint divider between contact tiles and About Me */
   .intro-right::before{
     content:"";
     display:block;
     height:1px;
-    background:rgba(255,255,255,.95);
-    margin:16px 0;              /* equal space above & below */
+    background:rgba(255,255,255,.55); /* faint like desktop */
+    margin:16px 0;                    /* equal space above & below */
     border-radius:1px;
   }
-  /* Make the About↔Trophy divider symmetric too */
+
+  /* Ensure About↔Trophy divider is also faint & symmetric */
   .about-sep{
-    border-top:1px solid rgba(255,255,255,.95);
-    margin:16px 0 !important;   /* equal space above & below */
+    border-top:1px solid rgba(255,255,255,.55);
+    margin:16px 0 !important;
   }
-  /* Avoid extra bottom margin on last paragraph above the divider */
+
   .about-inner p:last-of-type{ margin-bottom:0; }
+
+  .trophy-img{ height:74px; }
+
+  .projects-grid{ grid-template-columns:1fr; }
+  .project-hero{ height:240px; }
+}
+
+/* MOBILE-ONLY (<=600px): same faint divider & equal gaps */
+@media (max-width:600px){
+  .intro-right{ position:relative; }
+  .intro-right::before{
+    content:"";
+    display:block;
+    height:1px;
+    background:rgba(255,255,255,.55); /* made fainter */
+    margin:16px 0;
+    border-radius:1px;
+  }
+  .about-sep{
+    border-top:1px solid rgba(255,255,255,.55); /* made fainter */
+    margin:16px 0 !important;
+  }
 }
 
 @media (max-width:420px){
