@@ -13,16 +13,15 @@ title: "Home"
 </section>
 
 <!-- INTRO: PROFILE (LEFT) + ABOUT/TROPHY (RIGHT) -->
+<!-- INTRO: PROFILE (LEFT) + ABOUT/TROPHY (RIGHT) -->
 <section class="panel intro-grid">
   <!-- LEFT COLUMN -->
   <div class="intro-left">
     <div class="top-group">
-      <!-- Adjust desktop-only size via pf-sm | pf-md | pf-lg | pf-xl -->
-      <img src="{{ site.baseurl }}/images/liad-mizrachi.jpg" alt="Liad Mizrachi" class="profile-pic pf-lg">
+      <img src="{{ site.baseurl }}/images/liad-mizrachi.jpg" alt="Liad Mizrachi" class="profile-pic">
       <h3 class="profile-name">Liad Mizrachi</h3>
       <p class="profile-title">Senior Product Manager</p>
     </div>
-
     <div class="contact-block">
       <p class="contact-label"><em>Get in touch! 📧</em></p>
       <div class="contact-bar">
