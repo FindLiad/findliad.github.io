@@ -8,7 +8,7 @@ title: "Home"
   <img src="{{ site.baseurl }}/images/Redpillbluepill.png" alt="Hero Graphic" class="hero-img">
   <div class="hero-overlay">
     <h1 class="hero-title">My Personal Project Portfolio</h1>
-    <p class="hero-subtext">What’s The Business Value? 💰 — This isn’t a static résumé, it’s a record of product challenges I’ve explored, solved and delivered impact on end to end.</p>
+    <p class="hero-subtext">What’s The Business Value? — This isn’t a static résumé, it’s a record of product challenges I’ve explored, solved and delivered impact on end to end.</p>
   </div>
 </section>
 
@@ -34,7 +34,7 @@ title: "Home"
   <!-- RIGHT COLUMN -->
   <div class="intro-right">
     <div class="about-inner">
-      <h2>About Me 👤</h2>
+      <h2>About Me</h2>
       <p>I turn ambiguity into clear product bets. With an M.S. from Penn and a CSPO, I frame problems crisply, align stakeholders on the minimum valuable product, and keep roadmaps tied to measurable outcomes. My bias is toward measurable progress, transparent trade-offs, and practical impact over gaudy design.</p>
       <p>My path began in engineering—building models and CI/CD pipelines at NASA, then improving QA and lifecycle workflows at Lockheed Martin. I moved into product at Pegasystems, leading AI-powered initiatives on Customer Decision Hub for enterprise clients like Verizon and T-Mobile, focusing on scalable, high-impact outcomes that endure.</p>
       <p>Today, I focus on AI-enabled, data-informed experiences for operators and customers in complex environments: instrumentation from day one, dashboards that guide recurring decisions, and agile practices that turn uncertainty into progress.</p>
@@ -43,7 +43,7 @@ title: "Home"
     <hr class="about-sep"/>
 
     <div class="trophy-section">
-      <h2>Trophy Case 🥇</h2>
+      <h2>Trophy Case</h2>
       <div class="trophy-row">
         <a class="trophy-badge" href="https://achieve.snowflake.com/de6a8975-e11f-4785-90e3-9666c3ef468e#acc.ZX9lSow3" target="_blank" rel="noopener">
           <img class="trophy-img" src="{{ site.baseurl }}/images/badges/snowflake1.png" alt="Snowflake Credential 1">
@@ -61,7 +61,7 @@ title: "Home"
 
 <!-- PROJECTS: TILE GRID WITH IMAGE HERO + OVERLAY -->
 <section class="panel projects-panel">
-  <h2>Featured Projects 🎨</h2>
+  <h2>Featured Projects</h2>
 
   <div class="projects-grid">
     <!-- Project 1 -->
