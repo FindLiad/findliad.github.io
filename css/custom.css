@@ -131,21 +131,20 @@ body::after{
 .project-links a:hover{ text-decoration:underline; color:var(--brand-2); }
 
 /* ========= STACKED LAYOUT FOR COMPRESSED DESKTOP & MOBILE ========= */
-/* This media query is exactly what creates the stacked view.
-   Apply it for ALL small screens, including phones.
-*/
-@media (max-width: 900px){
+/* Force the same stacked look on phones as your compressed desktop.
+   We use two queries so iOS/Safari phones are guaranteed to match.        */
+@media (max-width:900px), (pointer:coarse) {
   /* hero */
   .hero-img{ height:clamp(320px,64vw,520px); object-position:center top; }
   .hero-title{ font-size:clamp(1.6rem,7vw,2.2rem); }
   .hero-subtext{ font-size:clamp(1rem,4vw,1.15rem); max-width:92%; }
 
   /* STACK the center section (no side-by-side) */
-  .intro-grid{ grid-template-columns:1fr; }
-  .intro-grid::before{ display:none; }          /* hide vertical divider */
+  .panel.intro-grid{ display:block !important; }   /* turn off grid */
+  .panel.intro-grid::before{ display:none !important; }  /* hide divider */
 
   /* 1) Profile block */
-  .intro-left{ order:1; padding:14px 12px 0; }
+  .intro-left{ padding:14px 12px 0 !important; }
   .profile-pic{ width:min(280px,70vw); height:auto; aspect-ratio:1/1; }
   .profile-title{ margin:4px 0 10px; }
   .contact-bar{ gap:12px; }
@@ -154,18 +153,18 @@ body::after{
   .contact-block{ margin-top:12px; margin-bottom:8px; }
 
   /* 2) About Me */
-  .intro-right{ order:2; padding:6px 12px 0; }
+  .intro-right{ padding:6px 12px 0 !important; }
   .about-inner p{ font-size:1.06rem; line-height:1.68; }
   .about-sep{ margin:14px 0 12px; }
 
-  /* 3) Trophy Case (already below About Me inside .intro-right) */
+  /* 3) Trophy Case (already below About Me) */
   .trophy-badge{ width:74px; height:74px; }
 
-  /* breathing room */
+  /* spacing below the whole panel */
   .intro-panel{ padding-bottom:10px; }
 }
 
-/* Ultra-narrow phones keep the same stacked layout, just scale controls */
+/* Ultra-narrow phones keep stacked layout, just scale controls */
 @media (max-width:420px){
   .contact-btn{ height:62px; }
   .contact-btn i{ font-size:24px; }
