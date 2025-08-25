@@ -113,17 +113,30 @@ body::after{
 .about-inner{ max-width:720px; margin:0 0 12px 0; }
 .about-sep{ border:none; border-top:1px solid var(--line); margin:8px 0 12px; }
 
+/* ========= TROPHY CASE (no white frames) ========= */
 .trophy-section{ margin-top:auto; margin-bottom:0; }
 .trophy-section h2{ margin:0 0 10px; }
 .trophy-row{
   display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-start;
   margin:0; padding:0;
 }
+/* Remove card look completely */
 .trophy-badge{
   display:inline-flex; align-items:center; justify-content:center;
-  width:80px; height:80px; border-radius:14px; background:#fff; border:1px solid var(--line); box-shadow:var(--panel-shadow);
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  padding:0 !important;
+  margin:0;
 }
-.trophy-img{ max-width:100%; max-height:100%; display:block; }
+/* Size purely by the image; no container box */
+.trophy-img{
+  display:block;
+  height:80px; width:auto;
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+}
 
 /* ========= PROJECTS ========= */
 .project-list{ list-style:disc; margin-left:1.25rem; }
@@ -131,20 +144,15 @@ body::after{
 .project-links a:hover{ text-decoration:underline; color:var(--brand-2); }
 
 /* ========= STACKED LAYOUT FOR COMPRESSED DESKTOP & MOBILE ========= */
-/* Force the same stacked look on phones as your compressed desktop.
-   We use two queries so iOS/Safari phones are guaranteed to match.        */
-@media (max-width:900px), (pointer:coarse) {
-  /* hero */
+@media (max-width: 900px){
   .hero-img{ height:clamp(320px,64vw,520px); object-position:center top; }
   .hero-title{ font-size:clamp(1.6rem,7vw,2.2rem); }
   .hero-subtext{ font-size:clamp(1rem,4vw,1.15rem); max-width:92%; }
 
-  /* STACK the center section (no side-by-side) */
-  .panel.intro-grid{ display:block !important; }   /* turn off grid */
-  .panel.intro-grid::before{ display:none !important; }  /* hide divider */
+  .intro-grid{ grid-template-columns:1fr; }
+  .intro-grid::before{ display:none; }
 
-  /* 1) Profile block */
-  .intro-left{ padding:14px 12px 0 !important; }
+  .intro-left{ order:1; padding:14px 12px 0; }
   .profile-pic{ width:min(280px,70vw); height:auto; aspect-ratio:1/1; }
   .profile-title{ margin:4px 0 10px; }
   .contact-bar{ gap:12px; }
@@ -152,21 +160,17 @@ body::after{
   .contact-btn i{ font-size:28px; }
   .contact-block{ margin-top:12px; margin-bottom:8px; }
 
-  /* 2) About Me */
-  .intro-right{ padding:6px 12px 0 !important; }
+  .intro-right{ order:2; padding:6px 12px 0; }
   .about-inner p{ font-size:1.06rem; line-height:1.68; }
   .about-sep{ margin:14px 0 12px; }
 
-  /* 3) Trophy Case (already below About Me) */
-  .trophy-badge{ width:74px; height:74px; }
-
-  /* spacing below the whole panel */
+  .trophy-img{ height:74px; }   /* scale badges on phones */
   .intro-panel{ padding-bottom:10px; }
 }
 
-/* Ultra-narrow phones keep stacked layout, just scale controls */
+/* Ultra-narrow phones */
 @media (max-width:420px){
   .contact-btn{ height:62px; }
   .contact-btn i{ font-size:24px; }
-  .trophy-badge{ width:68px; height:68px; }
+  .trophy-img{ height:68px; }
 }
