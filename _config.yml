@@ -1,14 +1,28 @@
-title: "My Personal Project Portfolio"
-description: "My take on quick, yet meaningful wins"   # no subtext in the blue header
-permalink: ':title/'
-url: "https://findliad.github.io"
+# ---- Site identity ----
+title: "Liad Mizrachi | Product Manager"
+description: "Official site of Liad Mizrachi — data-driven product manager and systems engineer. Portfolio, projects, and product storytelling."
+url: "https://liadmizrachi.com"   # custom domain (no trailing slash)
+baseurl: ""                       # empty because the site lives at the domain root
+
+# ---- Theme ----
 theme: jekyll-theme-modernist
 
+# ---- Permalinks ----
+permalink: ":title/"
+
+# ---- Author & Social (used by jekyll-seo-tag) ----
 author: "Liad Mizrachi"
-social-github: "FindLiad"
-social-linkedin: "https://www.linkedin.com/in/liad-mizrachi/"
-social-email: "FindLiad@gmail.com"
+social_links:
+  - { platform: github,   user_url: "https://github.com/FindLiad" }
+  - { platform: linkedin, user_url: "https://www.linkedin.com/in/liad-mizrachi/" }
+  - { platform: email,    user_url: "mailto:FindLiad@gmail.com" }
 
-discus-identifier:
-analytics:
+# ---- Plugins (GitHub Pages–supported) ----
+plugins:
+  - jekyll-sitemap     # generates /sitemap.xml automatically
+  - jekyll-seo-tag     # outputs proper <title>, meta description, OpenGraph, etc.
 
+# ---- Optional analytics/disqus (fill in later) ----
+google_analytics:
+disqus:
+  shortname:
